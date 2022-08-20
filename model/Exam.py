@@ -34,6 +34,23 @@ class Exam(dict):
     status: str
     _status: str = field(init=False, repr=False)
 
+    def to_json(self):
+        result =(
+            '{"exam_uuid": "' + self.exam_uuid + '",'
+            '"teacher": "' + self.teacher + '",'
+            '"student": "' + self.student + '",'
+            '"cohort": "' + self.cohort + '",'
+            '"email": "' + self.email + '",'
+            '"module": "' + self.module + '",'
+            '"exam_num": "' + self.exam_num + '",'
+            '"duration": ' + str(self.duration) + ','
+            '"remarks": "' + self.remarks + '",'
+            '"tools": "' + self.tools + '",'
+            '"datetime": "' + self.datetime + '",'
+            '"status": "' + self.status + '"}'
+        )
+        return result
+
     @property
     def exam_uuid(self):
         return self._exam_uuid
@@ -69,11 +86,11 @@ class Exam(dict):
     @property
     def email(self):
         return self._email
-    
+
     @email.setter
     def email(self, value):
         self._email = value
-    
+
     @property
     def module(self):
         return self._module

@@ -1,3 +1,5 @@
+import uuid
+
 from dacite import from_dict
 from model.Exam import Exam
 import json
@@ -11,8 +13,8 @@ def condition(exam, filter_value):
     :return: matches filter True/False
     """
     if (exam.teacher == filter_value or
-       exam.student == filter_value or
-       exam.datetime == filter_value):
+            exam.student == filter_value or
+            exam.datetime == filter_value):
         return True
     return False
 
@@ -52,6 +54,20 @@ class ExamDAO:
 
         exam = [item for item in self._examlist if item.exam_uuid == uuid]
         return exam
+
+    def save_exam(self, exam):
+        self.load_exams()
+        if exam.exam_uuid is None:
+            exam.exam_uuid = str(uuid.uuid4())
+        self._examlist.append(exam)
+        jstring = '['
+        for item in self._examlist:
+            jstring += item.to_json() + ","
+        jstring = jstring[:-1] + ']'
+
+        file = open('./files/exams.json', 'w')
+        file.write(jstring)
+        file.close()
 
     def load_exams(self):
         """
