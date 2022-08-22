@@ -54,7 +54,7 @@ class ExamService(Resource):
     def get(self, exam_uuid):
         exam_dao = ExamDAO()
         exam = exam_dao.read_exam(exam_uuid)
-        if len(exam) == 0:
+        if exam is None:
             return None, 404
         return exam, 200
 
