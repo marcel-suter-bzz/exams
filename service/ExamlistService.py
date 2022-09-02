@@ -1,9 +1,6 @@
-import json
-
 from flask_restful import Resource, fields, marshal_with
 
 from data.ExamDAO import ExamDAO
-
 
 resource_fields = {
     'exam_uuid': fields.String,
@@ -17,6 +14,7 @@ resource_fields = {
     'datetime': fields.String,
     'status': fields.String
 }
+
 
 class ExamlistService(Resource):
     """
@@ -35,14 +33,14 @@ class ExamlistService(Resource):
         self._foo = ''
 
     @marshal_with(resource_fields)
-    def get(self, filter):
+    def get(self, filter_value):
         """
         get a list of exams
-        :param filter: the filter to be applied
+        :param filter_value: the filter to be applied
         :return: JSON object with the exams
         """
         exam_dao = ExamDAO()
-        examlist = exam_dao.filtered_list(filter)
+        examlist = exam_dao.filtered_list(filter_value)
         return examlist
 
 

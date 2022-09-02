@@ -1,8 +1,6 @@
 import uuid
 
-from dacite import from_dict
 from model.Exam import Exam
-import json
 
 
 def condition(exam, filter_value):
@@ -71,6 +69,7 @@ class ExamDAO:
             exam.exam_uuid = str(uuid.uuid4())
         self._examdict[exam.exam_uuid] = exam
         jstring = Exam.schema().dumps(list(self._examdict.values()), many=True)
+
         '''
         jstring = '['
         for item in self._examdict.values():

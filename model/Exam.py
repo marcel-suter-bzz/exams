@@ -1,57 +1,27 @@
 from dataclasses import dataclass, field
-from dataclasses_json import dataclass_json
+from dataclasses_json import dataclass_json, config, Exclude
 
 
 @dataclass_json
 @dataclass
 class Exam(dict):
     """
-    short description
+    a exam to be taken
     
     author: Marcel Suter
     """
 
     exam_uuid: str
-    _exam_uuid: str = field(init=False, repr=False)
     teacher: str
-    _teacher: str = field(init=False, repr=False)
     student: str
-    _student: str = field(init=False, repr=False)
     cohort: str
-    _cohort: str = field(init=False, repr=False)
-    email: str
-    _email: str = field(init=False, repr=False)
     module: str
-    _module: str = field(init=False, repr=False)
     exam_num: str
-    _exam_num: str = field(init=False, repr=False)
     duration: int
-    _duration: int = field(init=False, repr=False)
     remarks: str
-    _remarks: str = field(init=False, repr=False)
     tools: str
-    _tools: str = field(init=False, repr=False)
     datetime: str
-    _datetime: str = field(init=False, repr=False)
     status: str
-    _status: str = field(init=False, repr=False)
-
-    def to_json(self):
-        result =(
-            '{"exam_uuid": "' + self.exam_uuid + '",'
-            '"teacher": "' + self.teacher + '",'
-            '"student": "' + self.student + '",'
-            '"cohort": "' + self.cohort + '",'
-            '"email": "' + self.email + '",'
-            '"module": "' + self.module + '",'
-            '"exam_num": "' + self.exam_num + '",'
-            '"duration": ' + str(self.duration) + ','
-            '"remarks": "' + self.remarks + '",'
-            '"tools": "' + self.tools + '",'
-            '"datetime": "' + self.datetime + '",'
-            '"status": "' + self.status + '"}'
-        )
-        return result
 
     @property
     def exam_uuid(self):
@@ -84,14 +54,6 @@ class Exam(dict):
     @cohort.setter
     def cohort(self, value):
         self._cohort = value
-
-    @property
-    def email(self):
-        return self._email
-
-    @email.setter
-    def email(self, value):
-        self._email = value
 
     @property
     def module(self):
