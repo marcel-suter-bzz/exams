@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Marcel Suter">
+  <title>Nachprüfung</title>
+  <script src="./js/util.js" defer></script>
+  <script src="./js/examlist.js" defer></script>
+  <link rel="stylesheet" href="./css/exam.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<nav>
+  <a href="./index.html">Home</a>
+</nav>
+<main>
+  <div id="messages" class="messages"></div>
+  <div id="examsearch">
+    <form id="searchform">
+      <fieldset>
+        <legend>Prüfungen suchen</legend>
+        <label for="nameSearch">Name</label>
+        <input id="nameSearch" name="nameSearch"/>
+        <label for="topicSearch">Fach</label>
+        <input id="topicSearch" name="topicSearch"/>
+        <label for="dateSearch">Datum</label>
+        <input id="dateSearch" name="dateSearch"/>
+        <label for="statusSearch">Status</label>
+        <input id="statusSearch" name="statusSearch"/>
+      </fieldset>
+    </form>
+  </div>
+  <div id="list">
+    <table id="examlist">
+      <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Lernender</th>
+        <th>Email</th>
+        <th>Klasse</th>
+        <th>Lehrperson</th>
+        <th>Fach</th>
+        <th>Prüfung</th>
+        <th>Dauer</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <div id="examedit">
+    <form id="editform">
+      <fieldset>
+        <legend>Prüfung bearbeiten</legend>
+        <label for="student">Lernender</label>
+        <input id="student" name="student"/>
+        <label for="email">Email</label>
+        <input id="email" name="email"/>
+        <label for="cohort">Klasse</label>
+        <input id="cohort" name="cohort"/>
+        <label for="teacher">Lehrperson</label>
+        <input id="teacher" name="teacher"/>
+        <label for="module">Fach</label>
+        <input id="module" name="module"/>
+        <label for="exam_num">Prüfung</label>
+        <input id="exam_num" name="exam_num"/>
+        <label for="duration">Dauer</label>
+        <input id="duration" name="duration"/>
+        <label for="remarks">Bemerkungen</label>
+        <input id="remarks" name="remarks"/>
+        <label for="tools">Hilfsmittel</label>
+        <input id="tools" name="tools"/>
+        <label for="status">Status</label>
+        <input id="status" name="status"/>
+      </fieldset>
+    </form>
+  </div>
+</main>
+<footer>
+  Exam v0.1r20220902 &copy; 2022 by Marcel Suter
+</footer>
+</body>
+</html>

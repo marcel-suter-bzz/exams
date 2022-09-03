@@ -4,8 +4,9 @@ from data.ExamDAO import ExamDAO
 
 resource_fields = {
     'exam_uuid': fields.String,
-    'teacher': fields.String,
     'student': fields.String,
+    'cohort': fields.String,
+    'teacher': fields.String,
     'module': fields.String,
     'exam_num': fields.String,
     'duration': fields.Integer,

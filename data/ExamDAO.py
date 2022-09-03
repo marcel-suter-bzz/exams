@@ -10,8 +10,9 @@ def condition(exam, filter_value):
     :param filter_value: the filter condition
     :return: matches filter True/False
     """
-    if (exam.teacher == filter_value or
-            exam.student == filter_value or
+    filter_value = filter_value.lower()
+    if (filter_value in exam.teacher.lower() or
+            filter_value in exam.student.lower() or
             exam.datetime == filter_value):
         return True
     return False
@@ -45,6 +46,8 @@ class ExamDAO:
         for (key, exam) in self._examdict.items():
             if condition(exam, filter_value):
                 filtered.append(exam)
+                if len(filtered) >= 20:
+                    break
         return filtered
 
     def read_exam(self, uuid):
@@ -70,13 +73,6 @@ class ExamDAO:
         self._examdict[exam.exam_uuid] = exam
         jstring = Exam.schema().dumps(list(self._examdict.values()), many=True)
 
-        '''
-        jstring = '['
-        for item in self._examdict.values():
-            jstring += item.to_json() + ","
-        jstring = jstring[:-1] + ']'
-
-'''
         file = open('./files/exams.json', 'w')
         file.write(jstring)
         file.close()
