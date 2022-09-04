@@ -1,0 +1,12 @@
+[
+  {
+    "datetime": "2022-09-13 15:00:00",
+    "rooms" : ["H100", "H131"],
+    "supervisors": ["hans.muster@bzz.local", "hanna.heimspiel@bzz.local"]
+  },
+  {
+    "datetime": "2022-11-24 09:00:00",
+    "rooms" : ["H100", "H131"],
+    "supervisors": ["carlo.castor@bzz.local", "hanna.heimspiel@bzz.local"]
+  }
+]

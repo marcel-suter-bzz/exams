@@ -1,4 +1,5 @@
 from flask_restful import Resource, fields, marshal_with, reqparse
+from util.token import token_required
 from data.ExamDAO import ExamDAO
 from model.Exam import Exam
 
@@ -35,6 +36,7 @@ class ExamService(Resource):
 
     author: Marcel Suter
     """
+    method_decorators = [token_required]
 
     def __init__(self):
         """
@@ -46,7 +48,7 @@ class ExamService(Resource):
         pass
 
     @marshal_with(resource_fields)
-    def get(self, exam_uuid):
+    def get(self, user, exam_uuid):
         """
         gets an exam identified by the uuid
         :param exam_uuid: the unique key
@@ -58,7 +60,7 @@ class ExamService(Resource):
             return None, 404
         return exam, 200
 
-    def post(self):
+    def post(self, user):
         """
         creates a new exam
         :return: http response
@@ -81,7 +83,7 @@ class ExamService(Resource):
         exam_dao.save_exam(exam)
         return exam, 201
 
-    def put(self):
+    def put(self, user):
         """
         updates an existing exam identified by the uuid
         :return:

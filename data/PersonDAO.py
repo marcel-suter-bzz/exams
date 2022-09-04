@@ -46,13 +46,31 @@ class PersonDAO:
                 filtered.append(person)
         return filtered
 
-    def read_person(self, email):
+    def read_person(self, email, password=None):
         """
         reads a person by its email
         :param email:
         :return: Person object
         """
-        pass
+        for (key, person) in self._peopledict.items():
+            if (key == email and
+                    password in [None,"1234"]
+                    ):
+                return person
+        return None
+
+    def authenticate_person(self, email, password):
+        """
+        authenticates a user
+        :param email:
+        :param password:
+        :return: authentication successful true/false
+        """
+        for (key, person) in self._peopledict.items():
+            if (person.email == email and
+                    "1234" == password):
+                return True
+        return False
 
     def save_person(self, person):
         """

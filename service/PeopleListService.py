@@ -1,6 +1,7 @@
 from flask_restful import Resource, fields, marshal_with
 
 from data.PersonDAO import PersonDAO
+from util.token import token_required
 
 resource_fields = {
     'firstname': fields.String,
@@ -15,6 +16,7 @@ class PeoplelistService(Resource):
 
     author: Marcel Suter
     """
+    method_decorators = [token_required]
 
     def __init__(self):
         """
@@ -26,7 +28,7 @@ class PeoplelistService(Resource):
         self._foo = ''
 
     @marshal_with(resource_fields)
-    def get(self, filter_value):
+    def get(self, user, filter_value):
         """
         get a list of people
         :param filter_value: the filter to be applied

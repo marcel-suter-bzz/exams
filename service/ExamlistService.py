@@ -1,6 +1,7 @@
 from flask_restful import Resource, fields, marshal_with
 
 from data.ExamDAO import ExamDAO
+from util.token import token_required
 
 resource_fields = {
     'exam_uuid': fields.String,
@@ -23,6 +24,7 @@ class ExamlistService(Resource):
 
     author: Marcel Suter
     """
+    method_decorators = [token_required]
 
     def __init__(self):
         """
@@ -34,7 +36,7 @@ class ExamlistService(Resource):
         self._foo = ''
 
     @marshal_with(resource_fields)
-    def get(self, filter_value):
+    def get(self, user, filter_value):
         """
         get a list of exams
         :param filter_value: the filter to be applied

@@ -1,14 +1,24 @@
 /**
- *
+ * view-controller for examlist
  */
 let delayTimer;
-readExamlist("a");
+const user = readStorage("email");
+const role = readStorage("role");
+readExamlist(user);
 document.addEventListener("DOMContentLoaded", () => {
     const search = document.getElementById("searchform");
     search.value = "";
     search.addEventListener("keyup", () => {
         searchExamlist(search.value);
     });
+
+    document.getElementById("nameSearch").value = user;
+    if (role !== "teacher") {
+        //document.getElementById("searchform").style.display = "none";
+        lockForm("editform", true);
+    } else {
+        lockForm("editform", false);
+    }
     //document.getElementById("add").addEventListener("click", addPerson);
 });
 
@@ -30,7 +40,7 @@ function searchExamlist(filter) {
 function selectExam(event) {
     const button = event.target;
     const uuid = button.getAttribute("data-examUUID");
-    readExam (uuid);
+    readExam(uuid);
 }
 
 /**
@@ -38,7 +48,12 @@ function selectExam(event) {
  * @param uuid
  */
 function readExam(uuid) {
-    fetch("./exam/" + uuid)
+    fetch("./exam/" + uuid,
+        {
+            headers: {
+                "Authorization": "Bearer " + readStorage("token")
+            },
+        })
         .then(function (response) {
             if (response.ok) {
                 return response;
@@ -58,6 +73,10 @@ function readExam(uuid) {
         });
 }
 
+/**
+ * shows an exam
+ * @param exam
+ */
 function showExam(exam) {
     for (let property in exam) {
         const field = document.getElementById(property);
@@ -67,15 +86,23 @@ function showExam(exam) {
     }
 
 }
+
 /**
  * reads all exams matching a filter
  * @param filter
  */
 function readExamlist(filter) {
-    fetch("./exams/" + filter)
+    fetch("./exams/" + filter,
+        {
+            headers: {
+                "Authorization": "Bearer " + readStorage("token")
+            },
+        })
         .then(function (response) {
             if (response.ok) {
                 return response;
+            } else if (response.status === 401) {
+                window.location.href = "./";
             } else if (response.status === 404) {
                 showMessage("warning", "Keine Daten gefunden");
             } else {
@@ -110,8 +137,6 @@ function showExamlist(data) {
         rows.innerHTML = "";
         data.forEach(exam => {
             let row = rows.insertRow(-1);
-            //row.addEventListener("click", selectExam(exam.exam_uuid))
-
             let cell = row.insertCell(-1);
             let button = document.createElement("button");
             button.innerHTML = "&#9998;";

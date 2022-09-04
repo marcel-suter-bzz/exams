@@ -43,3 +43,62 @@ function makeField(name, type, value, size = 0) {
 
     return inputField;
 }
+
+/**
+ * locks / unlocks all fields in a form
+ * @param formId  the id of the form containing the fields
+ * @param locked  true=lock fields
+ */
+function lockForm(formId, locked = true) {
+    const form = document.getElementById(formId);
+    const fields = form.querySelectorAll("select,input");
+    for (let i=0; i<fields.length; i++) {
+        const field = fields[i];
+        if (field.tagName === "INPUT") {
+            field.readOnly = locked;
+        } else if (field.tagName === "SELECT") {
+            field.disabled = locked;
+        }
+
+    }
+}
+
+/**
+ * gets the value of the cookie with the specified name
+ * Source: https://www.w3schools.com/js/js_cookies.asp
+ * @param cname  the name of the cookie
+ * @returns {string}
+ */
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookie.split(';');
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) === 0) {
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+/**
+ * saves the JWToken in SessionStorage
+ * @param data  response data
+ */
+function writeStorage(data) {
+    for (let key in data) {
+        sessionStorage.setItem(key, data[key]);
+    }
+}
+
+/**
+ * reads the JWToken from SessionStorage
+ * @returns {string}
+ */
+function readStorage(item) {
+    return sessionStorage.getItem(item);
+}

@@ -6,43 +6,83 @@
   <title>Nachprüfung</title>
   <script src="./js/util.js" defer></script>
   <script src="./js/examlist.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/exam.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-<nav>
-  <a href="./index.html">Home</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Nachprüfungen BZZ</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<main>
+<main class="container">
   <div id="messages" class="messages"></div>
   <div id="examsearch">
     <form id="searchform">
       <fieldset>
-        <legend>Prüfungen suchen</legend>
-        <label for="nameSearch">Name</label>
-        <input id="nameSearch" name="nameSearch"/>
-        <label for="topicSearch">Fach</label>
-        <input id="topicSearch" name="topicSearch"/>
-        <label for="dateSearch">Datum</label>
-        <input id="dateSearch" name="dateSearch"/>
-        <label for="statusSearch">Status</label>
-        <input id="statusSearch" name="statusSearch"/>
+        <legend>Prüfung suchen</legend>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="nameSearch" class="form-label">Name/Email</label>
+            <input type="text" class="form-control" id="nameSearch" aria-describedby="nameSearchHelp">
+            <div id="nameSearchHelp" class="form-text"></div>
+          </div>
+          <div class="col-lg mb-3">
+            <label for="topicSearch" class="form-label">Fach</label>
+            <input type="text" class="form-control" id="topicSearch" aria-describedby="topicSearchHelp">
+            <div id="topicSearchHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="dateSearch" class="form-label">Datum</label>
+            <input type="date" class="form-control" id="dateSearch" aria-describedby="dateSearchHelp">
+            <div id="dateSearchHelp" class="form-text"></div>
+          </div>
+          <div class="col-lg mb-3">
+            <label for="statusSearch" class="form-label">Status</label>
+            <select id="statusSearch" name="statusSearch" aria-describedby="statusSearchHelp">
+              <option value="alle">Alle</option>
+              <option value="pendent">pendent</option>
+              <option value="offen">offen</option>
+              <option value="abgegeben">abgegeben</option>
+              <option value="erhalten">erhalten</option>
+              <option value="erledigt">erledigt</option>
+              <option value="pnab">pendent</option>
+              <option value="gelöscht">gelöscht</option>
+            </select>
+            <div id="statusSearchHelp" class="form-text"></div>
+          </div>
+        </div>
       </fieldset>
     </form>
   </div>
   <div id="list">
-    <table id="examlist">
+    <table id="examlist" class="table table-striped table-hover table-responsive">
       <thead>
       <tr>
-        <th>&nbsp;</th>
-        <th>Lernender</th>
-        <th>Email</th>
-        <th>Klasse</th>
-        <th>Lehrperson</th>
-        <th>Fach</th>
-        <th>Prüfung</th>
-        <th>Dauer</th>
-        <th>Status</th>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">Lernender</th>
+        <th scope="col">Email</th>
+        <th scope="col">Klasse</th>
+        <th scope="col">Lehrperson</th>
+        <th scope="col">Fach</th>
+        <th scope="col">Prüfung</th>
+        <th scope="col">Dauer</th>
+        <th scope="col">Status</th>
       </tr>
       </thead>
       <tbody>
@@ -53,32 +93,92 @@
     <form id="editform">
       <fieldset>
         <legend>Prüfung bearbeiten</legend>
-        <label for="student">Lernender</label>
-        <input id="student" name="student"/>
-        <label for="email">Email</label>
-        <input id="email" name="email"/>
-        <label for="cohort">Klasse</label>
-        <input id="cohort" name="cohort"/>
-        <label for="teacher">Lehrperson</label>
-        <input id="teacher" name="teacher"/>
-        <label for="module">Fach</label>
-        <input id="module" name="module"/>
-        <label for="exam_num">Prüfung</label>
-        <input id="exam_num" name="exam_num"/>
-        <label for="duration">Dauer</label>
-        <input id="duration" name="duration"/>
-        <label for="remarks">Bemerkungen</label>
-        <input id="remarks" name="remarks"/>
-        <label for="tools">Hilfsmittel</label>
-        <input id="tools" name="tools"/>
-        <label for="status">Status</label>
-        <input id="status" name="status"/>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="student" class="form-label">Lernender</label>
+            <input type="email" class="form-control" id="student" aria-describedby="studentHelp">
+            <div id="studentHelp" class="form-text"></div>
+          </div>
+          <div class="col-lg mb-3">
+            <label for="module" class="form-label">Fach</label>
+            <input type="text" class="form-control" id="module" aria-describedby="moduleHelp">
+            <div id="moduleHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="fullname" class="form-label">Email</label>
+            <input type="text" class="form-control" id="fullname" aria-describedby="fullnameHelp">
+            <div id="fullnameHelp" class="form-text"></div>
+          </div>
+          <div class="col-lg mb-3">
+            <label for="exam_num" class="form-label">Prüfung</label>
+            <input type="text" class="form-control" id="exam_num" aria-describedby="exam_numHelp">
+            <div id="exam_numHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="cohort" class="form-label">Klasse</label>
+            <input type="text" class="form-control" id="cohort" aria-describedby="cohortlHelp">
+            <div id="cohortHelp" class="form-text"></div>
+          </div>
+          <div class="col-lg mb-3">
+            <label for="duration" class="form-label">Dauer</label>
+            <input type="number" class="form-control" id="duration" aria-describedby="durationHelp">
+            <div id="durationHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="teacher" class="form-label">Lehrperson</label>
+            <input type="text" class="form-control" id="teacher" aria-describedby="teacherHelp">
+            <div id="teacherHelp" class="form-text"></div>
+          </div>
+          <div class="col-lg mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select id="status" name="status" aria-describedby="toolsHelp">
+              <option value="pendent">pendent</option>
+              <option value="offen">offen</option>
+              <option value="abgegeben">abgegeben</option>
+              <option value="erhalten">erhalten</option>
+              <option value="erledigt">erledigt</option>
+              <option value="pnab">pendent</option>
+              <option value="gelöscht">gelöscht</option>
+            </select>
+            <div id="statusHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="tools" class="form-label">Hilfsmittel</label>
+            <input type="text" class="form-control" id="tools" aria-describedby="toolsHelp">
+            <div id="toolsHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
+            <label for="remarks" class="form-label">Bemerkungen (intern)</label>
+            <input type="text" class="form-control" id="remarks" aria-describedby="remarksHelp">
+            <div id="remarksHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button type="button" id="saveexam" name="safeexam">Speichern</button>
+          </div>
+          <div class="col">
+            <button type="reset">Zurücksetzen</button>
+          </div>
+        </div>
       </fieldset>
     </form>
   </div>
 </main>
-<footer>
-  Exam v0.1r20220902 &copy; 2022 by Marcel Suter
+<footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Exam v0.1r20220902 &copy; 2022 by Marcel Suter
+  </div>
 </footer>
 </body>
 </html>

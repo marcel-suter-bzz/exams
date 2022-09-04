@@ -1,322 +1,295 @@
 [
   {
+    "email": "c.benson@bzz.local",
+    "firstname": "Carla",
+    "lastname": "Benson",
+    "role": "teacher"
+  },
+  {
+    "email": "Lo.Fl@bzz.local",
     "firstname": "",
     "lastname": "Fl Lo",
-    "email": "Lo.Fl@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Fl Lo",
-    "email": "Lo.Fl@bzz.local"
-  },
-  {
+    "email": "Fa.No@bzz.local",
     "firstname": "",
     "lastname": "No Fa",
-    "email": "Fa.No@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "No Fa",
-    "email": "Fa.No@bzz.local"
-  },
-  {
+    "email": "Ra.Pa@bzz.local",
     "firstname": "",
     "lastname": "Pa Ra",
-    "email": "Ra.Pa@bzz.local"
+    "role": "student"
   },
   {
+    "email": "No.Sc@bzz.local",
     "firstname": "",
     "lastname": "Sc No",
-    "email": "No.Sc@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Si.De@bzz.local",
     "firstname": "",
     "lastname": "De Si",
-    "email": "Si.De@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Yo.Ze@bzz.local",
     "firstname": "",
     "lastname": "Ze Yo",
-    "email": "Yo.Ze@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Ze Yo",
-    "email": "Yo.Ze@bzz.local"
-  },
-  {
-    "firstname": "",
-    "lastname": "Ze Yo",
-    "email": "Yo.Ze@bzz.local"
-  },
-  {
-    "firstname": "",
-    "lastname": "Ze Yo",
-    "email": "Yo.Ze@bzz.local"
-  },
-  {
-    "firstname": "",
-    "lastname": "Ze Yo",
-    "email": "Yo.Ze@bzz.local"
-  },
-  {
+    "email": "Lo.Ma@bzz.local",
     "firstname": "",
     "lastname": "Ma Lo",
-    "email": "Lo.Ma@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Sa.Ni@bzz.local",
     "firstname": "",
     "lastname": "Ni Sa",
-    "email": "Sa.Ni@bzz.local"
+    "role": "student"
   },
   {
+    "email": "No.Ha@bzz.local",
     "firstname": "",
     "lastname": "Ha No",
-    "email": "No.Ha@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Ha No",
-    "email": "No.Ha@bzz.local"
-  },
-  {
+    "email": "Na.Am@bzz.local",
     "firstname": "",
     "lastname": "Am Na",
-    "email": "Na.Am@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Am Na",
-    "email": "Na.Am@bzz.local"
-  },
-  {
+    "email": "Mi.Di@bzz.local",
     "firstname": "",
     "lastname": "Di Mi",
-    "email": "Mi.Di@bzz.local"
+    "role": "student"
   },
   {
+    "email": "El.La@bzz.local",
     "firstname": "",
     "lastname": "La El",
-    "email": "El.La@bzz.local"
+    "role": "student"
   },
   {
+    "email": "iv.Go@bzz.local",
     "firstname": "",
     "lastname": "Go iv",
-    "email": "iv.Go@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Go iv",
-    "email": "iv.Go@bzz.local"
-  },
-  {
+    "email": "Fr.Fe@bzz.local",
     "firstname": "",
     "lastname": "Fe Fr",
-    "email": "Fr.Fe@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Fe Fr",
-    "email": "Fr.Fe@bzz.local"
-  },
-  {
+    "email": "Ph.Ry@bzz.local",
     "firstname": "",
     "lastname": "Ry Ph",
-    "email": "Ph.Ry@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Ry Ph",
-    "email": "Ph.Ry@bzz.local"
-  },
-  {
+    "email": "Ar.Ti@bzz.local",
     "firstname": "",
     "lastname": "Ti Ar",
-    "email": "Ar.Ti@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Di.Fa@bzz.local",
     "firstname": "",
     "lastname": "Fa Di",
-    "email": "Di.Fa@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Fa Di",
-    "email": "Di.Fa@bzz.local"
-  },
-  {
+    "email": "Mo.Ha@bzz.local",
     "firstname": "",
     "lastname": "Ha Mo",
-    "email": "Mo.Ha@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Ha Mo",
-    "email": "Mo.Ha@bzz.local"
-  },
-  {
+    "email": "Ju.Ja@bzz.local",
     "firstname": "",
     "lastname": "Ja Ju",
-    "email": "Ju.Ja@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Ja Ju",
-    "email": "Ju.Ja@bzz.local"
-  },
-  {
+    "email": "Ma.Jo@bzz.local",
     "firstname": "",
     "lastname": "Jo Ma",
-    "email": "Ma.Jo@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Jo Ma",
-    "email": "Ma.Jo@bzz.local"
-  },
-  {
-    "firstname": "",
-    "lastname": "Jo Ma",
-    "email": "Ma.Jo@bzz.local"
-  },
-  {
-    "firstname": "",
-    "lastname": "Jo Ma",
-    "email": "Ma.Jo@bzz.local"
-  },
-  {
+    "email": "Me.Aj@bzz.local",
     "firstname": "",
     "lastname": "Aj Me",
-    "email": "Me.Aj@bzz.local"
+    "role": "student"
   },
   {
+    "email": "An.De@bzz.local",
     "firstname": "",
     "lastname": "De An",
-    "email": "An.De@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Cu.Ka@bzz.local",
     "firstname": "",
-    "lastname": "Ka Cé",
-    "email": "Cé.Ka@bzz.local"
+    "lastname": "Ka Cu",
+    "role": "student"
   },
   {
+    "email": "Fe.Pa@bzz.local",
     "firstname": "",
     "lastname": "Pa Fe",
-    "email": "Fe.Pa@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Al.Ve@bzz.local",
     "firstname": "",
     "lastname": "Ve Al",
-    "email": "Al.Ve@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Ka.Be@bzz.local",
     "firstname": "",
     "lastname": "Be Ka",
-    "email": "Ka.Be@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Al.Bu@bzz.local",
     "firstname": "",
     "lastname": "Bu Al",
-    "email": "Al.Bu@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Is.Co@bzz.local",
     "firstname": "",
     "lastname": "Co Is",
-    "email": "Is.Co@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Na.Ge@bzz.local",
     "firstname": "",
     "lastname": "Ge Na",
-    "email": "Na.Ge@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Ph.Gr@bzz.local",
     "firstname": "",
     "lastname": "Gr Ph",
-    "email": "Ph.Gr@bzz.local"
+    "role": "student"
   },
   {
+    "email": "An.Ka@bzz.local",
     "firstname": "",
     "lastname": "Ka An",
-    "email": "An.Ka@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Lu.Oe@bzz.local",
     "firstname": "",
     "lastname": "Oe Lu",
-    "email": "Lu.Oe@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Er.Qu@bzz.local",
     "firstname": "",
     "lastname": "Qu Er",
-    "email": "Er.Qu@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Ch.Sa@bzz.local",
     "firstname": "",
     "lastname": "Sa Ch",
-    "email": "Ch.Sa@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Bl.Sh@bzz.local",
     "firstname": "",
     "lastname": "Sh Bl",
-    "email": "Bl.Sh@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Da.Re@bzz.local",
     "firstname": "",
     "lastname": "Re Da",
-    "email": "Da.Re@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Li.Ew@bzz.local",
     "firstname": "",
     "lastname": "Ew Li",
-    "email": "Li.Ew@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Da.Ra@bzz.local",
     "firstname": "",
     "lastname": "Ra Da",
-    "email": "Da.Ra@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Ra.Sc@bzz.local",
     "firstname": "",
     "lastname": "Sc Ra",
-    "email": "Ra.Sc@bzz.local"
+    "role": "student"
   },
   {
+    "email": "El.St@bzz.local",
     "firstname": "",
     "lastname": "St El",
-    "email": "El.St@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Sv.Gi@bzz.local",
     "firstname": "",
     "lastname": "Gi Sv",
-    "email": "Sv.Gi@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Cy.Sh@bzz.local",
     "firstname": "",
     "lastname": "Sh Cy",
-    "email": "Cy.Sh@bzz.local"
+    "role": "student"
   },
   {
-    "firstname": "",
-    "lastname": "Sh Cy",
-    "email": "Cy.Sh@bzz.local"
-  },
-  {
+    "email": "Mo.Le@bzz.local",
     "firstname": "",
     "lastname": "Le Mo",
-    "email": "Mo.Le@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Ma.Wo@bzz.local",
     "firstname": "",
     "lastname": "Wo Ma",
-    "email": "Ma.Wo@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Va.Wo@bzz.local",
     "firstname": "",
     "lastname": "Wo Va",
-    "email": "Va.Wo@bzz.local"
+    "role": "student"
   },
   {
+    "email": "Li.We@bzz.local",
     "firstname": "",
     "lastname": "We Li",
-    "email": "Li.We@bzz.local"
+    "role": "student"
+  },
+  {
+    "email": "Muster",
+    "firstname": "muha@bzz.local",
+    "lastname": "Hans",
+    "role": "student"
+  },
+  {
+    "email": "muha@bzz.local",
+    "firstname": "Hanna",
+    "lastname": "Muster"
   }
 ]
