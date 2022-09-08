@@ -1,5 +1,65 @@
 [
   {
+    "email": "m.nagato@bzz.local",
+    "firstname": "Maria",
+    "lastname": "Nagato",
+    "role": "teacher"
+  },
+  {
+    "email": "n.oberon@bzz.local",
+    "firstname": "Nick",
+    "lastname": "Oberon",
+    "role": "teacher"
+  },
+  {
+    "email": "i.kagero@bzz.local",
+    "firstname": "Irma",
+    "lastname": "Kagero",
+    "role": "teacher"
+  },
+  {
+    "email": "k.leim@bzz.local",
+    "firstname": "Karl",
+    "lastname": "Leim",
+    "role": "teacher"
+  },
+  {
+    "email": "b.arnheim@bzz.local",
+    "firstname": "Beata",
+    "lastname": "Arnheim",
+    "role": "teacher"
+  },
+  {
+    "email": "h.ise@bzz.local",
+    "firstname": "Hans",
+    "lastname": "Ise",
+    "role": "teacher"
+  },
+  {
+    "email": "g.haragumo@bzz.local",
+    "firstname": "Gerda",
+    "lastname": "Haragumo",
+    "role": "teacher"
+  },
+  {
+    "email": "l.maya@bzz.local",
+    "firstname": "Laura",
+    "lastname": "Maya",
+    "role": "teacher"
+  },
+  {
+    "email": "e.daring@bzz.local",
+    "firstname": "Emil",
+    "lastname": "Daring",
+    "role": "teacher"
+  },
+  {
+    "email": "f.elbing@bzz.local",
+    "firstname": "Fiona",
+    "lastname": "Elbing",
+    "role": "teacher"
+  },
+  {
     "email": "c.benson@bzz.local",
     "firstname": "Carla",
     "lastname": "Benson",

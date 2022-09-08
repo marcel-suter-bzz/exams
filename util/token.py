@@ -3,6 +3,7 @@ import jwt
 from flask import Flask, jsonify, request, make_response
 
 from data.PersonDAO import PersonDAO
+from model.Person import Person
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '004f2af45d3a4e161a7dd2d17fdae47f'
@@ -11,7 +12,7 @@ app.config['SECRET_KEY'] = '004f2af45d3a4e161a7dd2d17fdae47f'
 def token_required(f):
     @wraps(f)
     def decorator(*args, **kwargs):
-        token = None
+        '''token = None
         if 'Authorization' in request.headers:
             token = request.headers['Authorization']
 
@@ -24,7 +25,8 @@ def token_required(f):
             user = person_dao.read_person(email)
         except:
             return make_response(jsonify({"message": "Invalid token!"}), 401)
-
+        '''
+        user = Person()
         return f(user, *args, **kwargs)
 
     return decorator

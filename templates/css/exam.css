@@ -1,85 +1,26 @@
-/*:root {
-    --searchColor: #F0F0F0;
-    --bgColor: #E0EDAE;
-    --bgDark: #B6BF91;
-    --navText: #F0F0F0;
-    --navBg: #244E47;
-    --minWidth: 1200px;
-    --maxWidth: 1800px;
-}
-
-body {
-    background-color: #F0F0F0;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.2em;
-}
-
-nav, footer {
-    min-width: var(--minWidth);
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding: 5px 10px;
-    height: 30px;
-    background-color: var(--navBg);
-    color: var(--navText);
-    text-align: center;
-}
-
-nav a, nav a:visited,
-footer a, footer a:visited {
-    margin: 0 30px;
-    color: var(--navText);
-}
-
-nav > .active {
-    background-color: var(--bgColor) !important;
-    color: black !important;
-}
-
-footer {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-main {
-    position: relative;
-    background-color: var(--bgColor);
-    min-width: var(--minWidth);
-    max-width: var(--maxWidth);
-    min-height: 800px;
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    flex-flow: column wrap;
-    flex: 0 1 var(--maxWidth);
-    justify-content: flex-start;
-
-}
-
-label {
-    display: block;
-}
-
-table {
-    min-width: var(--minWidth);
-    max-width: var(--maxWidth);
-}
-
-thead, tbody {
-    display: block;
-}
-
-tbody {
-
-    height: 300px;
+.table-fixed tbody {
+    height: 400px;
     overflow-y: auto;
-    overflow-x: auto;
+    width:100%;
 }
 
-td {
-    padding: 3px 10px 3px 3px;
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+    display: block;
+}
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+    float: left;
+    position: relative;
+
 }
 
- */
+#eventlist tbody {
+    height: 200px !important;
+    overflow-y: auto;
+    width:100%;
+}

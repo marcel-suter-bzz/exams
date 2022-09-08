@@ -78,13 +78,22 @@ function readExam(uuid) {
  * @param exam
  */
 function showExam(exam) {
-    for (let property in exam) {
-        const field = document.getElementById(property);
-        if (field !== null) {
-            field.value = exam[property];
+    setValues(exam, "")
+
+}
+
+function setValues(object, parent) {
+    for (let property in object) {
+        if (typeof object[property] === "object") {
+            setValues(object[property], property);
+
+        } else {
+            const field = document.getElementById(parent + property);
+            if (field !== null) {
+                field.value = object[property];
+            }
         }
     }
-
 }
 
 /**
@@ -147,20 +156,31 @@ function showExamlist(data) {
             cell.appendChild(button);
 
             cell = row.insertCell(-1);
-            cell.innerHTML = "tbd";
+            cell.className = "col-xs-1";
+            cell.innerHTML = exam.student.firstname + " " + exam.student.lastname;
             cell = row.insertCell(-1);
-            cell.innerHTML = exam.student;
+            cell.className = "col-xs-2";
+            cell.innerHTML = exam.student.email;
             cell = row.insertCell(-1);
+            cell.className = "col-xs-1";
             cell.innerHTML = exam.cohort;
             cell = row.insertCell(-1);
-            cell.innerHTML = exam.teacher;
+            cell.className = "col-xs-1";
+            cell.innerHTML = exam.teacher.email;
             cell = row.insertCell(-1);
+            cell.className = "col-xs-2";
             cell.innerHTML = exam.module;
             cell = row.insertCell(-1);
+            cell.className = "col-xs-1";
             cell.innerHTML = exam.exam_num;
             cell = row.insertCell(-1);
+            cell.className = "col-xs-1";
             cell.innerHTML = exam.duration;
             cell = row.insertCell(-1);
+            cell.className = "col-xs-2";
+            cell.innerHTML = exam.datetime;
+            cell = row.insertCell(-1);
+            cell.className = "col-xs-1";
             cell.innerHTML = exam.status;
 
         });

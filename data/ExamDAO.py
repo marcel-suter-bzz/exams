@@ -1,5 +1,7 @@
+import json
 import uuid
 
+from data.PersonDAO import PersonDAO
 from model.Exam import Exam
 
 
@@ -10,9 +12,10 @@ def condition(exam, filter_value):
     :param filter_value: the filter condition
     :return: matches filter True/False
     """
+    return True # FIXME
     filter_value = filter_value.lower()
-    if (filter_value in exam.teacher.lower() or
-            filter_value in exam.student.lower() or
+    if (filter_value in exam.teacher.email.lower() or
+            filter_value in exam.student.email.lower() or
             exam.datetime == filter_value):
         return True
     return False
@@ -83,10 +86,26 @@ class ExamDAO:
         :return: none
         :rtype: none
         """
+        person_dao = PersonDAO()
         file = open('./files/exams.json')
-        exams = Exam.schema().loads(file.read(), many=True)
-        for exam in exams:
-            key = exam.exam_uuid
+        exams = json.load(file)
+        for item in exams:
+            key = item['exam_uuid']
+            teacher = person_dao.read_person(item['teacher'])
+            student = person_dao.read_person(item['student'])
+            exam = Exam(
+                item['exam_uuid'],
+                teacher,
+                student,
+                item['cohort'],
+                item['module'],
+                item['exam_num'],
+                item['duration'],
+                item['remarks'],
+                item['tools'],
+                item['datetime'],
+                item['status']
+            )
             self._examdict[key] = exam
 
 

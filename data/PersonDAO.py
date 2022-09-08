@@ -1,5 +1,5 @@
 from model.Person import Person
-
+import json
 
 def condition(person, filter_value):
     """
@@ -52,12 +52,14 @@ class PersonDAO:
         :param email:
         :return: Person object
         """
-        for (key, person) in self._peopledict.items():
+        for (key, item) in self._peopledict.items():
+
             if (key == email and
-                    password in [None,"1234"]
-                    ):
-                return person
-        return None
+                    password in [None, "1234"]  # FIXME
+            ):
+                return item
+        person = Person(email)
+        return person
 
     def authenticate_person(self, email, password):
         """
@@ -91,10 +93,17 @@ class PersonDAO:
                 :rtype: none
                 """
         file = open('./files/person.json')
-        people = Person.schema().loads(file.read(), many=True)
-        for person in people:
-            key = person.email
+        people = json.load(file)
+        for item in people:
+            key = item['email']
+            person = Person(
+                item['email'],
+                item['firstname'],
+                item['lastname'],
+                item['role']
+            )
             self._peopledict[key] = person
+
 
 
 if __name__ == '__main__':

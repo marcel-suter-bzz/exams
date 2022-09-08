@@ -1,14 +1,9 @@
-from flask_restful import Resource, fields, marshal_with, reqparse
+from flask import make_response
+from flask_restful import Resource, reqparse
 from data.PersonDAO import PersonDAO
 from model.Person import Person
 from util.token import token_required
 
-resource_fields = {
-    'email': fields.String,
-    'firstname': fields.String,
-    'lastname': fields.String,
-    'role': fields.String
-}
 
 parser = reqparse.RequestParser()
 parser.add_argument('email', location='form', help='email')
@@ -34,7 +29,6 @@ class PersonService(Resource):
         """
         pass
 
-    @marshal_with(resource_fields)
     def get(self, user, email):
         """
         gets a person identified by the email
@@ -43,9 +37,15 @@ class PersonService(Resource):
         """
         person_dao = PersonDAO()
         person = person_dao.read_exam(email)
-        if person is None:
-            return None, 404
-        return person, 200
+        data = '{}'
+        http_status = 404
+        if person is not None:
+            http_status = 200
+            data = person.to_json()
+
+        return make_response(
+            data, http_status
+        )
 
     def post(self, user):
         """

@@ -7,7 +7,7 @@
    "module": "M3",
    "exam_num": "",
    "duration": 40,
-   "teacher": "C Benson",
+   "teacher": "c.benson@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -20,7 +20,7 @@
    "module": "N2",
    "exam_num": "",
    "duration": 40,
-   "teacher": "C Benson",
+   "teacher": "c.benson@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": ""
@@ -33,7 +33,7 @@
    "module": "M3",
    "exam_num": "",
    "duration": 40,
-   "teacher": "C Benson",
+   "teacher": "c.benson@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -46,7 +46,7 @@
    "module": "N2",
    "exam_num": "",
    "duration": 40,
-   "teacher": "C Benson",
+   "teacher": "c.benson@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": ""
@@ -59,7 +59,7 @@
    "module": "M3",
    "exam_num": "",
    "duration": 40,
-   "teacher": "C Benson",
+   "teacher": "c.benson@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner, Fomrelsammlung im Anhang der Pr."
@@ -72,7 +72,7 @@
    "module": "M3",
    "exam_num": "",
    "duration": 40,
-   "teacher": "C Benson",
+   "teacher": "c.benson@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner, Fomrelsammlung im Anhang der Pr."
@@ -85,7 +85,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 45,
-   "teacher": "E Daring",
+   "teacher": "e.daring@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": ""
@@ -98,7 +98,7 @@
    "module": "Deutsch",
    "exam_num": "1",
    "duration": 75,
-   "teacher": "F Elbing",
+   "teacher": "f.elbing@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Duden"
@@ -111,7 +111,7 @@
    "module": "Gesellschaft",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "F Elbing",
+   "teacher": "f.elbing@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": ""
@@ -124,7 +124,7 @@
    "module": "Wirtschaft",
    "exam_num": "1",
    "duration": 60,
-   "teacher": "M Nagato",
+   "teacher": "m.nagato@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -137,7 +137,7 @@
    "module": "Wirtschaft",
    "exam_num": "1",
    "duration": 35,
-   "teacher": "M Nagato",
+   "teacher": "m.nagato@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -150,7 +150,7 @@
    "module": "DHK",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "M Nagato",
+   "teacher": "m.nagato@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -163,7 +163,7 @@
    "module": "Wirtschaft",
    "exam_num": "1",
    "duration": 40,
-   "teacher": "M Nagato",
+   "teacher": "m.nagato@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -176,7 +176,7 @@
    "module": "122",
    "exam_num": "3",
    "duration": 30,
-   "teacher": "N Oberon",
+   "teacher": "n.oberon@bzz.local",
    "status": "offen",
    "remarks": "Abgabe in Moodle",
    "tools": "Eigene Unterlagen und Skripte. Keine Internetrecherche"
@@ -189,7 +189,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -202,7 +202,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -215,7 +215,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -228,7 +228,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -241,7 +241,7 @@
    "module": "153",
    "exam_num": "2",
    "duration": 70,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": " Abgabe in Moodle",
    "tools": "OpenBook"
@@ -254,7 +254,7 @@
    "module": "162",
    "exam_num": "2",
    "duration": 120,
-   "teacher": "D Clemson",
+   "teacher": "m.nagato@bzz.local",
    "status": "erledigt",
    "remarks": "Moodle-Test, keine Papierunterlagen abzugeben",
    "tools": "OpenBook"
@@ -267,7 +267,7 @@
    "module": "M122",
    "exam_num": "3",
    "duration": 60,
-   "teacher": "N Oberon",
+   "teacher": "n.oberon@bzz.local",
    "status": "offen",
    "remarks": "Moodle-Test, keine Papierunterlagen abzugeben",
    "tools": "1 Din A4 Seite eigenhandschriftlich erstellt."
@@ -280,7 +280,7 @@
    "module": "M183",
    "exam_num": "1",
    "duration": 60,
-   "teacher": "N Oberon",
+   "teacher": "n.oberon@bzz.local",
    "status": "offen",
    "remarks": "Moodle-Test, keine Papierunterlagen abzugeben",
    "tools": "1 Din A4 Seite eigenhandschriftlich erstellt."
@@ -293,7 +293,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -306,7 +306,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -319,7 +319,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -332,7 +332,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -345,7 +345,7 @@
    "module": "153",
    "exam_num": "2",
    "duration": 70,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Abgabe in Moodle",
    "tools": "OpenBook"
@@ -358,7 +358,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -371,7 +371,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -384,7 +384,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -397,7 +397,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -410,7 +410,7 @@
    "module": "153",
    "exam_num": "2",
    "duration": 70,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Abgabe in Moodle",
    "tools": "OpenBook"
@@ -423,9 +423,9 @@
    "module": "120",
    "exam_num": "2",
    "duration": 120,
-   "teacher": "K Leim",
+   "teacher": "k.leim@bzz.local",
    "status": "offen",
-   "remarks": "Aufgebot erfolgt für Juni",
+   "remarks": "Aufgebot erfolgt fur Juni",
    "tools": "OpenBook"
  },
  {
@@ -436,7 +436,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 30,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 1 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -449,7 +449,7 @@
    "module": "153",
    "exam_num": "1",
    "duration": 45,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Teil 2 von 2, Abgabe in Moodle",
    "tools": "OpenBook"
@@ -462,7 +462,7 @@
    "module": "153",
    "exam_num": "2",
    "duration": 70,
-   "teacher": "I Kagero",
+   "teacher": "i.kagero@bzz.local",
    "status": "erledigt",
    "remarks": "Abgabe in Moodle",
    "tools": "OpenBook"
@@ -475,9 +475,9 @@
    "module": "120",
    "exam_num": "2",
    "duration": 120,
-   "teacher": "K Leim",
+   "teacher": "k.leim@bzz.local",
    "status": "offen",
-   "remarks": "Aufgebot erfolgt für Juni",
+   "remarks": "Aufgebot erfolgt fur Juni",
    "tools": "OpenBook"
  },
  {
@@ -488,7 +488,7 @@
    "module": "WuG",
    "exam_num": "2",
    "duration": 45,
-   "teacher": "B Arnheim",
+   "teacher": "b.arnheim@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -501,7 +501,7 @@
    "module": "WuG",
    "exam_num": "2",
    "duration": 45,
-   "teacher": "B Arnheim",
+   "teacher": "b.arnheim@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -510,11 +510,11 @@
    "exam_uuid": "40",
    "datetime": "2022-09-13 15:00:39",
    "cohort": "CD20b",
-   "student": "Cé.Kä@bzz.local",
+   "student": "Cu.Ka@bzz.local",
    "module": "WuG",
    "exam_num": "2",
    "duration": 45,
-   "teacher": "B Arnheim",
+   "teacher": "b.arnheim@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -527,7 +527,7 @@
    "module": "WuG",
    "exam_num": "2",
    "duration": 45,
-   "teacher": "B Arnheim",
+   "teacher": "b.arnheim@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -540,7 +540,7 @@
    "module": "WuG",
    "exam_num": "2",
    "duration": 45,
-   "teacher": "B Arnheim",
+   "teacher": "b.arnheim@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -553,7 +553,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Keine"
@@ -562,11 +562,11 @@
    "exam_uuid": "44",
    "datetime": "2022-09-13 15:00:43",
    "cohort": "CH20a",
-   "student": "Al.Bü@bzz.local",
+   "student": "Al.Bu@bzz.local",
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": ""
@@ -579,7 +579,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -592,7 +592,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -605,7 +605,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -618,7 +618,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -631,7 +631,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -644,7 +644,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -657,7 +657,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -670,7 +670,7 @@
    "module": "Französisch",
    "exam_num": "",
    "duration": 60,
-   "teacher": "H Ise",
+   "teacher": "h.ise@bzz.local",
    "status": "pnab",
    "remarks": "",
    "tools": "keine"
@@ -683,7 +683,7 @@
    "module": "284",
    "exam_num": "3",
    "duration": 40,
-   "teacher": "L Maya",
+   "teacher": "l.maya@bzz.local",
    "status": "pnab",
    "remarks": "",
    "tools": "keine"
@@ -696,7 +696,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -709,7 +709,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -722,7 +722,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -735,7 +735,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 47,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "Nachteilsausgleich, da fremdsprachig: Wörterbuch Deutsch-Italienisch",
    "tools": "Taschenrechner"
@@ -748,7 +748,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -761,7 +761,7 @@
    "module": "283",
    "exam_num": "1",
    "duration": 40,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "keine"
@@ -774,7 +774,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "G Haragumo",
+   "teacher": "g.haragumo@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -787,7 +787,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "L Maya",
+   "teacher": "l.maya@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -800,7 +800,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "L Maya",
+   "teacher": "l.maya@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"
@@ -813,7 +813,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "L Maya",
+   "teacher": "l.maya@bzz.local",
    "status": "pnab",
    "remarks": "bis auf weiteres krank geschrieben",
    "tools": "Taschenrechner"
@@ -826,7 +826,7 @@
    "module": "284",
    "exam_num": "2",
    "duration": 40,
-   "teacher": "L Maya",
+   "teacher": "l.maya@bzz.local",
    "status": "erledigt",
    "remarks": "",
    "tools": "Taschenrechner"

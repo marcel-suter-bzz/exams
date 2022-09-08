@@ -1,21 +1,8 @@
-from flask_restful import Resource, fields, marshal_with
+from flask import make_response
+from flask_restful import Resource
 
 from data.ExamDAO import ExamDAO
 from util.token import token_required
-
-resource_fields = {
-    'exam_uuid': fields.String,
-    'student': fields.String,
-    'cohort': fields.String,
-    'teacher': fields.String,
-    'module': fields.String,
-    'exam_num': fields.String,
-    'duration': fields.Integer,
-    'remarks': fields.String,
-    'tools': fields.String,
-    'datetime': fields.String,
-    'status': fields.String
-}
 
 
 class ExamlistService(Resource):
@@ -33,9 +20,8 @@ class ExamlistService(Resource):
         Parameters:
 
         """
-        self._foo = ''
+        pass
 
-    @marshal_with(resource_fields)
     def get(self, user, filter_value):
         """
         get a list of exams
@@ -44,7 +30,14 @@ class ExamlistService(Resource):
         """
         exam_dao = ExamDAO()
         examlist = exam_dao.filtered_list(filter_value)
-        return examlist
+        exams_json = '['
+        for exam in examlist:
+            data = exam.to_json()
+            exams_json += data + ','
+        exams_json = exams_json[:-1] + ']'
+        return make_response(
+            exams_json, 200
+        )
 
 
 if __name__ == '__main__':

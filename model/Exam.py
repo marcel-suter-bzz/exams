@@ -1,8 +1,7 @@
-from dataclasses import dataclass, field
-from dataclasses_json import dataclass_json, config, Exclude
+from dataclasses import dataclass
+from model.Person import Person
 
 
-@dataclass_json
 @dataclass
 class Exam(dict):
     """
@@ -12,8 +11,8 @@ class Exam(dict):
     """
 
     exam_uuid: str
-    teacher: str
-    student: str
+    teacher: Person
+    student: Person
     cohort: str
     module: str
     exam_num: str
@@ -22,6 +21,23 @@ class Exam(dict):
     tools: str
     datetime: str
     status: str
+
+    def to_json(self):
+        print("Exam.to_json()")
+        foo = self.teacher.foobar()
+        print("teacher" + foo)
+        jstring = '{"exam_uuid":"' + self.exam_uuid + '",' + \
+                  '"cohort": "' + self.cohort + '", ' + \
+                  '"module": "' + self.module + '", ' + \
+                  '"exam_num": "' + self.exam_num + '", ' + \
+                  '"duration": ' + str(self.duration) + ', ' + \
+                  '"remarks": "' + self.remarks + '", ' + \
+                  '"tools": "' + self.tools + '", ' + \
+                  '"datetime": "' + self.datetime + '", ' + \
+                  '"status": "' + self.status + '", ' + \
+                  '"teacher": ' + self.teacher.foobar() + ',' + \
+                  '"student": ' + self.student.foobar() + '}'
+        return jstring
 
     @property
     def exam_uuid(self):

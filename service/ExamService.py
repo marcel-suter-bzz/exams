@@ -1,12 +1,18 @@
-from flask_restful import Resource, fields, marshal_with, reqparse
+from flask import make_response
+from flask_restful import Resource, fields, reqparse
 from util.token import token_required
 from data.ExamDAO import ExamDAO
 from model.Exam import Exam
 
-resource_fields = {
+person_fields = {
+    'email': fields.String,
+    'firstname': fields.String,
+    'lastname': fields.String
+}
+exam_fields = {
     'exam_uuid': fields.String,
-    'teacher': fields.String,
-    'student': fields.String,
+    'teacher': fields.Nested(person_fields),
+    'student': fields.Nested(person_fields),
     'module': fields.String,
     'exam_num': fields.String,
     'duration': fields.Integer,
@@ -47,7 +53,6 @@ class ExamService(Resource):
         """
         pass
 
-    @marshal_with(resource_fields)
     def get(self, user, exam_uuid):
         """
         gets an exam identified by the uuid
@@ -56,9 +61,15 @@ class ExamService(Resource):
         """
         exam_dao = ExamDAO()
         exam = exam_dao.read_exam(exam_uuid)
-        if exam is None:
-            return None, 404
-        return exam, 200
+        data = '{}'
+        http_status = 404
+        if exam is not None:
+            http_status = 200
+            data = exam.to_json()
+
+        return make_response(
+            data, http_status
+        )
 
     def post(self, user):
         """

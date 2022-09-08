@@ -1,13 +1,8 @@
-from flask_restful import Resource, fields, marshal_with
+from flask import make_response
+from flask_restful import Resource
 
 from data.PersonDAO import PersonDAO
 from util.token import token_required
-
-resource_fields = {
-    'firstname': fields.String,
-    'lastname': fields.String,
-    'email': fields.String
-}
 
 
 class PeoplelistService(Resource):
@@ -27,7 +22,7 @@ class PeoplelistService(Resource):
         """
         self._foo = ''
 
-    @marshal_with(resource_fields)
+
     def get(self, user, filter_value):
         """
         get a list of people
@@ -36,7 +31,14 @@ class PeoplelistService(Resource):
         """
         person_dao = PersonDAO()
         peoplelist = person_dao.filtered_list(filter_value)
-        return peoplelist
+        people_json = '['
+        for person in peoplelist:
+            data = person.to_json()
+            people_json += data + ','
+        exams_json = exams_json[:-1] + ']'
+        return make_response(
+            exams_json, 200
+        )
 
 
 if __name__ == '__main__':

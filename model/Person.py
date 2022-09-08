@@ -1,8 +1,6 @@
-from dataclasses import dataclass, field
-from dataclasses_json import dataclass_json, config, Exclude
+from dataclasses import dataclass
 
 
-@dataclass_json
 @dataclass
 class Person(dict):
     """
@@ -12,9 +10,17 @@ class Person(dict):
     """
 
     email: str
-    firstname: str
-    lastname: str
-    role: str
+    firstname: str = ' '
+    lastname: str = ' '
+    role: str = ' '
+
+    def foobar(self):
+        person_json = '{"email":"' + self.email + '",' + \
+                      '"firstname": "' + self.firstname + '", ' + \
+                      '"lastname": "' + self.lastname + '", ' + \
+                      '"fullname": "' + self.firstname + ' ' + self.lastname + '", ' + \
+                      '"role": "' + self.role + '"}'
+        return person_json
 
     @property
     def firstname(self):
