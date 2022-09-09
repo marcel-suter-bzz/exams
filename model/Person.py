@@ -14,7 +14,7 @@ class Person(dict):
     lastname: str = ' '
     role: str = ' '
 
-    def foobar(self):
+    def to_json(self):
         person_json = '{"email":"' + self.email + '",' + \
                       '"firstname": "' + self.firstname + '", ' + \
                       '"lastname": "' + self.lastname + '", ' + \

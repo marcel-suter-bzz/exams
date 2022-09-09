@@ -54,7 +54,7 @@
           </div>
           <div class="col-lg mb-3">
             <label for="statusSearch" class="form-label">Status</label>
-            <select id="statusSearch" name="statusSearch" aria-describedby="statusSearchHelp">
+            <select id="statusSearch" name="statusSearch" class="form-select" aria-describedby="statusSearchHelp">
               <option value="alle">Alle</option>
               <option value="pendent">pendent</option>
               <option value="offen">offen</option>
@@ -75,17 +75,29 @@
       <table id="examlist" class="table">
         <thead>
         <tr>
-          <th class="col-xs-1" scope="col">&nbsp;</th>
-          <th class="col-xs-1" scope="col">Lernender</th>
-          <th class="col-xs-1" scope="col">Email</th>
-          <th class="col-xs-1" scope="col">Klasse</th>
-          <th class="col-xs-1" scope="col">Lehrperson</th>
-          <th class="col-xs-1" scope="col">Fach</th>
-          <th class="col-xs-1" scope="col">Prüfung</th>
-          <th class="col-xs-1" scope="col">Dauer</th>
-          <th class="col-xs-1" scope="col">Datum</th>
-          <th class="col-xs-1" scope="col">Status</th>
+          <th scope="col">&nbsp;</th>
+          <th  scope="col">Lernender</th>
+          <th  scope="col">Klasse</th>
+          <th  scope="col">Lehrperson</th>
+          <th  scope="col">Fach / Prüfung</th>
+          <th  scope="col">Dauer</th>
+          <th  scope="col">Datum</th>
+          <th  scope="col">Status</th>
         </tr>
+       <tr>
+         <th>&nbsp;</th>
+         <th><input id="studentSearch" type="text" /></th>
+         <th>&nbsp;</th>
+         <th><input id="teacherSearch" type="text" /></th>
+         <th>&nbsp;</th><th>&nbsp;</th>
+         <th><input id="dateSearch" type="text" /></th>
+         <th>
+           <select id="statusSearch" name="statusSearch" aria-describedby="statusSearchHelp">
+              <option value="all">Alle</option>
+              <option value="open">In Arbeit</option>
+              <option value="closed">Abgeschlossen</option>
+         </th>
+       </tr>
         </thead>
         <tbody>
         </tbody>
@@ -140,7 +152,7 @@
           </div>
           <div class="col-lg mb-3">
             <label for="status" class="form-label">Status</label>
-            <select id="status" name="status" aria-describedby="toolsHelp">
+            <select id="status" name="status" class="form-select" aria-describedby="toolsHelp">
               <option value="pendent">pendent</option>
               <option value="offen">offen</option>
               <option value="abgegeben">abgegeben</option>

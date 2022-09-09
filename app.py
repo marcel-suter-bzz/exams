@@ -3,6 +3,7 @@ from flask_restful import  Api
 
 
 from service.AuthorizationService import AuthorizationService
+from service.EventService import EventService
 from service.ExamService import ExamService
 from service.ExamlistService import ExamlistService
 from service.PersonService import PersonService
@@ -17,6 +18,7 @@ api.add_resource(ExamlistService, '/exams/<filter_value>')
 api.add_resource(PersonService, '/person')
 api.add_resource(PeoplelistService, '/people/<filter_value>')
 api.add_resource(AuthorizationService, '/login')
+api.add_resource(EventService, '/event/date=<date>', '/event/<event_uuid>')
 
 
 @app.route('/')

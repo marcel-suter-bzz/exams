@@ -156,23 +156,15 @@ function showExamlist(data) {
             cell.appendChild(button);
 
             cell = row.insertCell(-1);
-            cell.className = "col-xs-1";
             cell.innerHTML = exam.student.firstname + " " + exam.student.lastname;
+            cell.innerHTML += "<br />"+exam.student.email;
             cell = row.insertCell(-1);
-            cell.className = "col-xs-2";
-            cell.innerHTML = exam.student.email;
-            cell = row.insertCell(-1);
-            cell.className = "col-xs-1";
             cell.innerHTML = exam.cohort;
             cell = row.insertCell(-1);
-            cell.className = "col-xs-1";
-            cell.innerHTML = exam.teacher.email;
+            cell.innerHTML = exam.teacher.firstname + " " + exam.teacher.lastname;
+            cell.innerHTML += "<br />"+exam.teacher.email;
             cell = row.insertCell(-1);
-            cell.className = "col-xs-2";
-            cell.innerHTML = exam.module;
-            cell = row.insertCell(-1);
-            cell.className = "col-xs-1";
-            cell.innerHTML = exam.exam_num;
+            cell.innerHTML = exam.module + " / " + exam.exam_num;
             cell = row.insertCell(-1);
             cell.className = "col-xs-1";
             cell.innerHTML = exam.duration;

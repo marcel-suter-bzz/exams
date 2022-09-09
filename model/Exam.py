@@ -19,13 +19,10 @@ class Exam(dict):
     duration: int
     remarks: str
     tools: str
-    datetime: str
+    event_uuid: str
     status: str
 
     def to_json(self):
-        print("Exam.to_json()")
-        foo = self.teacher.foobar()
-        print("teacher" + foo)
         jstring = '{"exam_uuid":"' + self.exam_uuid + '",' + \
                   '"cohort": "' + self.cohort + '", ' + \
                   '"module": "' + self.module + '", ' + \
@@ -33,10 +30,10 @@ class Exam(dict):
                   '"duration": ' + str(self.duration) + ', ' + \
                   '"remarks": "' + self.remarks + '", ' + \
                   '"tools": "' + self.tools + '", ' + \
-                  '"datetime": "' + self.datetime + '", ' + \
+                  '"event_uuid": "' + self.event_uuid + '", ' + \
                   '"status": "' + self.status + '", ' + \
-                  '"teacher": ' + self.teacher.foobar() + ',' + \
-                  '"student": ' + self.student.foobar() + '}'
+                  '"teacher": ' + self.teacher.to_json() + ',' + \
+                  '"student": ' + self.student.to_json() + '}'
         return jstring
 
     @property
@@ -112,12 +109,12 @@ class Exam(dict):
         self._tools = value
 
     @property
-    def datetime(self):
-        return self._datetime
+    def event_uuid(self):
+        return self._event_uuid
 
-    @datetime.setter
-    def datetime(self, value):
-        self._datetime = value
+    @event_uuid.setter
+    def event_uuid(self, value):
+        self._event_uuid = value
 
     @property
     def status(self):

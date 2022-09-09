@@ -18,22 +18,10 @@ exam_fields = {
     'duration': fields.Integer,
     'remarks': fields.String,
     'tools': fields.String,
-    'datetime': fields.String,
+    'event_uuid': fields.String,
     'status': fields.String
 }
 
-parser = reqparse.RequestParser()
-parser.add_argument('exam_uuid', location='form', help='uuid')
-parser.add_argument('teacher', location='form', help='teacher')
-parser.add_argument('student', location='form', help='student')
-parser.add_argument('cohort', location='form', help='cohort')
-parser.add_argument('module', location='form', help='module')
-parser.add_argument('exam_num', location='form', help='exam-num')
-parser.add_argument('duration', location='form', type=str, help='Muss eine Ganzzahl sein')
-parser.add_argument('remarks', location='form', help='remarks')
-parser.add_argument('tools', location='form', help='tools')
-parser.add_argument('datetime', location='form', help='datetime')
-parser.add_argument('status', location='form', help='status')
 
 
 class ExamService(Resource):
@@ -51,7 +39,18 @@ class ExamService(Resource):
         Parameters:
 
         """
-        pass
+        self.parser = reqparse.RequestParser()
+        self.parser.add_argument('exam_uuid', location='form', help='uuid')
+        self.parser.add_argument('teacher', location='form', help='teacher')
+        self.parser.add_argument('student', location='form', help='student')
+        self.parser.add_argument('cohort', location='form', help='cohort')
+        self.parser.add_argument('module', location='form', help='module')
+        self.parser.add_argument('exam_num', location='form', help='exam-num')
+        self.parser.add_argument('duration', location='form', type=str, help='Muss eine Ganzzahl sein')
+        self.parser.add_argument('remarks', location='form', help='remarks')
+        self.parser.add_argument('tools', location='form', help='tools')
+        self.parser.add_argument('event_uuid', location='form', help='event_uuid')
+        self.parser.add_argument('status', location='form', help='status')
 
     def get(self, user, exam_uuid):
         """
@@ -76,7 +75,7 @@ class ExamService(Resource):
         creates a new exam
         :return: http response
         """
-        args = parser.parse_args()
+        args = self.parser.parse_args()
         exam = Exam(
             None,
             args.teacher,
@@ -87,7 +86,7 @@ class ExamService(Resource):
             args.duration,
             args.remarks,
             args.tools,
-            args.datetime,
+            args.event_uuid,
             args.status
         )
         exam_dao = ExamDAO()
@@ -99,7 +98,7 @@ class ExamService(Resource):
         updates an existing exam identified by the uuid
         :return:
         """
-        args = parser.parse_args()
+        args = self.parser.parse_args()
         exam = Exam(
             args.exam_uuid,
             args.teacher,
@@ -110,7 +109,7 @@ class ExamService(Resource):
             args.duration,
             args.remarks,
             args.tools,
-            args.datetime,
+            args.event_uuid,
             args.status
         )
         exam_dao = ExamDAO()

@@ -16,7 +16,7 @@ def condition(exam, filter_value):
     filter_value = filter_value.lower()
     if (filter_value in exam.teacher.email.lower() or
             filter_value in exam.student.email.lower() or
-            exam.datetime == filter_value):
+            exam.event_uuid == filter_value):
         return True
     return False
 
@@ -103,11 +103,10 @@ class ExamDAO:
                 item['duration'],
                 item['remarks'],
                 item['tools'],
-                item['datetime'],
+                item['event_uuid'],
                 item['status']
             )
             self._examdict[key] = exam
-
 
 if __name__ == '__main__':
     ''' Check if started directly '''
