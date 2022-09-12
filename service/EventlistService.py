@@ -5,9 +5,9 @@ from data.EventDAO import EventDAO
 from util.authorization import token_required
 
 
-class EventService(Resource):
+class EventlistService(Resource):
     """
-    services for CRUD of a single event
+    services for reading lists of events
 
     author: Marcel Suter
     """
@@ -22,20 +22,21 @@ class EventService(Resource):
         """
         pass
 
-    def get(self, event_uuid=None):
+    def get(self, date=None):
         """
-        gets an event identified by the uuid
-        :param event_uuid: the unique key
+        gets a list of events
+        :param date  the date of an event
         :return: http response
         """
         event_dao = EventDAO()
         http_status = 404
-        jstring = ''
-
-        event = event_dao.read_event(event_uuid)
-        if event is not None:
+        events = event_dao.filtered_list(date)
+        jstring = '['
+        for event in events:
             http_status = 200
-            jstring = event.to_json()
+            data = event.to_json() + ","
+            jstring += data
+        jstring = jstring[:-1] + ']'
 
         return make_response(
             jstring, http_status

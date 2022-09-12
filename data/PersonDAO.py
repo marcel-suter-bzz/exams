@@ -1,6 +1,7 @@
 from model.Person import Person
 import json
 
+
 def condition(person, filter_value):
     """
     condition for filtering the examlist
@@ -52,13 +53,13 @@ class PersonDAO:
         :param email:
         :return: Person object
         """
+        person = None
         for (key, item) in self._peopledict.items():
 
             if (key == email and
                     password in [None, "1234"]  # FIXME
             ):
                 return item
-        person = Person(email)
         return person
 
     def authenticate_person(self, email, password):
@@ -103,7 +104,6 @@ class PersonDAO:
                 item['role']
             )
             self._peopledict[key] = person
-
 
 
 if __name__ == '__main__':

@@ -22,19 +22,26 @@ class Exam(dict):
     event_uuid: str
     status: str
 
-    def to_json(self):
-        jstring = '{"exam_uuid":"' + self.exam_uuid + '",' + \
-                  '"cohort": "' + self.cohort + '", ' + \
-                  '"module": "' + self.module + '", ' + \
-                  '"exam_num": "' + self.exam_num + '", ' + \
-                  '"duration": ' + str(self.duration) + ', ' + \
-                  '"remarks": "' + self.remarks + '", ' + \
-                  '"tools": "' + self.tools + '", ' + \
-                  '"event_uuid": "' + self.event_uuid + '", ' + \
-                  '"status": "' + self.status + '", ' + \
-                  '"teacher": ' + self.teacher.to_json() + ',' + \
-                  '"student": ' + self.student.to_json() + '}'
-        return jstring
+    def to_json(self, response=True):
+        try:
+            jstring = '{"exam_uuid":"' + self.exam_uuid + '",' + \
+                      '"cohort": "' + self.cohort + '", ' + \
+                      '"module": "' + self.module + '", ' + \
+                      '"exam_num": "' + self.exam_num + '", ' + \
+                      '"duration": ' + str(self.duration) + ', ' + \
+                      '"remarks": "' + self.remarks + '", ' + \
+                      '"tools": "' + self.tools + '", ' + \
+                      '"event_uuid": "' + self.event_uuid + '", ' + \
+                      '"status": "' + self.status + '", '
+            if response:
+                jstring += '"teacher": ' + self.teacher.to_json() + ',' + \
+                           '"student": ' + self.student.to_json() + '}'
+            else:
+                jstring += '"teacher":"' + self.teacher.email + '",' + \
+                           '"student":"' + self.student.email + '"}'
+            return jstring
+        except:
+            print('Error')
 
     @property
     def exam_uuid(self):

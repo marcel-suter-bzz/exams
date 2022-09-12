@@ -19,8 +19,16 @@
 
 }
 
-#eventlist tbody {
+#examlist tbody {
     height: 200px !important;
     overflow-y: auto;
-    width:100%;
+    width: 100%;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
 }

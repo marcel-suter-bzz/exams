@@ -2,7 +2,7 @@ from flask import make_response
 from flask_restful import Resource
 
 from data.PersonDAO import PersonDAO
-from util.token import token_required
+from util.authorization import token_required, teacher_required
 
 
 class PeoplelistService(Resource):
@@ -20,10 +20,10 @@ class PeoplelistService(Resource):
         Parameters:
 
         """
-        self._foo = ''
+        pass
 
-
-    def get(self, user, filter_value):
+    @teacher_required
+    def get(self, filter_value):
         """
         get a list of people
         :param filter_value: the filter to be applied
@@ -35,9 +35,9 @@ class PeoplelistService(Resource):
         for person in peoplelist:
             data = person.to_json()
             people_json += data + ','
-        exams_json = exams_json[:-1] + ']'
+        people_json = people_json[:-1] + ']'
         return make_response(
-            exams_json, 200
+            people_json, 200
         )
 
 

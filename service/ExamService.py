@@ -1,6 +1,10 @@
+import uuid
+
 from flask import make_response
 from flask_restful import Resource, fields, reqparse
-from util.token import token_required
+
+from model.Person import Person
+from util.authorization import token_required, teacher_required
 from data.ExamDAO import ExamDAO
 from model.Exam import Exam
 
@@ -21,7 +25,6 @@ exam_fields = {
     'event_uuid': fields.String,
     'status': fields.String
 }
-
 
 
 class ExamService(Resource):
@@ -52,7 +55,7 @@ class ExamService(Resource):
         self.parser.add_argument('event_uuid', location='form', help='event_uuid')
         self.parser.add_argument('status', location='form', help='status')
 
-    def get(self, user, exam_uuid):
+    def get(self, exam_uuid):
         """
         gets an exam identified by the uuid
         :param exam_uuid: the unique key
@@ -70,39 +73,40 @@ class ExamService(Resource):
             data, http_status
         )
 
-    def post(self, user):
+    @teacher_required
+    def post(self):
         """
         creates a new exam
         :return: http response
         """
         args = self.parser.parse_args()
-        exam = Exam(
-            None,
-            args.teacher,
-            args.student,
-            args.cohort,
-            args.module,
-            args.exam_num,
-            args.duration,
-            args.remarks,
-            args.tools,
-            args.event_uuid,
-            args.status
-        )
-        exam_dao = ExamDAO()
-        exam_dao.save_exam(exam)
-        return exam, 201
+        self.save(args)
+        return make_response('exam saved', 201)
 
-    def put(self, user):
+    @teacher_required
+    def put(self):
         """
         updates an existing exam identified by the uuid
         :return:
         """
         args = self.parser.parse_args()
+        self.save(args)
+        return make_response('exam saved', 200)
+
+    def save(self,args):
+        """
+        saves the new or updated exam
+        :param args:
+        :return:
+        """
+        if args.exam_uuid is None:
+            args.exam_uuid = str(uuid.uuid4())
+        teacher = Person(args.teacher, '', '', '')
+        student = Person(args.student, '', '', '')
         exam = Exam(
             args.exam_uuid,
-            args.teacher,
-            args.student,
+            teacher,
+            student,
             args.cohort,
             args.module,
             args.exam_num,
@@ -114,7 +118,6 @@ class ExamService(Resource):
         )
         exam_dao = ExamDAO()
         exam_dao.save_exam(exam)
-        return exam, 200
 
 if __name__ == '__main__':
     ''' Check if started directly '''

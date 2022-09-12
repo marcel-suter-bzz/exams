@@ -28,10 +28,12 @@ class EventDAO:
         :param filter_value: the filter to be applied
         :return: list of events
         """
-        date = datetime.strptime(filter_value, '%Y-%m-%d')
+        date = None
+        if filter_value is not None:
+            date = datetime.strptime(filter_value, '%Y-%m-%d')
         filtered = []
         for (key, event) in self._eventdict.items():
-            if event.datetime.date() == date.date():
+            if date is None or event.datetime.date() == date.date():
                 filtered.append(event)
                 if len(filtered) >= 20:
                     break

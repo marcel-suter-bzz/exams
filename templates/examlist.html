@@ -30,78 +30,45 @@
 </nav>
 <main class="container">
   <div id="messages" class="messages"></div>
-  <div id="examsearch">
-    <form id="searchform">
-      <fieldset>
-        <legend>Prüfung suchen</legend>
-        <div class="row">
-          <div class="col-lg mb-3">
-            <label for="nameSearch" class="form-label">Name/Email</label>
-            <input type="text" class="form-control" id="nameSearch" aria-describedby="nameSearchHelp">
-            <div id="nameSearchHelp" class="form-text"></div>
-          </div>
-          <div class="col-lg mb-3">
-            <label for="topicSearch" class="form-label">Fach</label>
-            <input type="text" class="form-control" id="topicSearch" aria-describedby="topicSearchHelp">
-            <div id="topicSearchHelp" class="form-text"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg mb-3">
-            <label for="dateSearch" class="form-label">Datum</label>
-            <input type="date" class="form-control" id="dateSearch" aria-describedby="dateSearchHelp">
-            <div id="dateSearchHelp" class="form-text"></div>
-          </div>
-          <div class="col-lg mb-3">
-            <label for="statusSearch" class="form-label">Status</label>
-            <select id="statusSearch" name="statusSearch" class="form-select" aria-describedby="statusSearchHelp">
-              <option value="alle">Alle</option>
-              <option value="pendent">pendent</option>
-              <option value="offen">offen</option>
-              <option value="abgegeben">abgegeben</option>
-              <option value="erhalten">erhalten</option>
-              <option value="erledigt">erledigt</option>
-              <option value="pnab">pendent</option>
-              <option value="gelöscht">gelöscht</option>
-            </select>
-            <div id="statusSearchHelp" class="form-text"></div>
-          </div>
-        </div>
-      </fieldset>
-    </form>
-  </div>
   <div class="row">
     <div id="list" class="table-responsive">
-      <table id="examlist" class="table">
-        <thead>
-        <tr>
-          <th scope="col">&nbsp;</th>
-          <th  scope="col">Lernender</th>
-          <th  scope="col">Klasse</th>
-          <th  scope="col">Lehrperson</th>
-          <th  scope="col">Fach / Prüfung</th>
-          <th  scope="col">Dauer</th>
-          <th  scope="col">Datum</th>
-          <th  scope="col">Status</th>
-        </tr>
-       <tr>
-         <th>&nbsp;</th>
-         <th><input id="studentSearch" type="text" /></th>
-         <th>&nbsp;</th>
-         <th><input id="teacherSearch" type="text" /></th>
-         <th>&nbsp;</th><th>&nbsp;</th>
-         <th><input id="dateSearch" type="text" /></th>
-         <th>
-           <select id="statusSearch" name="statusSearch" aria-describedby="statusSearchHelp">
-              <option value="all">Alle</option>
-              <option value="open">In Arbeit</option>
-              <option value="closed">Abgeschlossen</option>
-         </th>
-       </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <form id="filterForm">
+        <table id="examlist" class="table">
+          <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Lernender</th>
+            <th scope="col">Klasse</th>
+            <th scope="col">Lehrperson</th>
+            <th scope="col">Fach / Prüfung</th>
+            <th scope="col">Dauer</th>
+            <th scope="col">Datum</th>
+            <th scope="col">Status</th>
+          </tr>
+          <tr id="searchForm">
+            <th>&nbsp;</th>
+            <th><input id="studentSearch" type="text"/></th>
+            <th>&nbsp;</th>
+            <th><input id="teacherSearch" type="text"/></th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th><select id="dateSearch" type="text"></select></th>
+            <th>
+              <div id="statusSearch">
+                <label for="open">
+                  <input type="checkbox" id="open" checked/>
+                  Offen</label>
+                <label for="closed">
+                  <input type="checkbox" id="closed" checked />
+                  Abgeschlossen</label>
+              </div>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </form>
     </div>
   </div>
   <div id="examedit">
@@ -166,6 +133,13 @@
         </div>
         <div class="row">
           <div class="col-lg mb-3">
+            <label for="date" class="form-label">Datum</label>
+            <select class="form-select" id="date" aria-describedby="dateHelp"></select>
+            <div id="dateHelp" class="form-text"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg mb-3">
             <label for="tools" class="form-label">Hilfsmittel</label>
             <input type="text" class="form-control" id="tools" aria-describedby="toolsHelp">
             <div id="toolsHelp" class="form-text"></div>
@@ -180,7 +154,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <button type="button" id="saveexam" name="safeexam">Speichern</button>
+            <button type="submit" id="saveexam" name="safeexam">Speichern</button>
           </div>
           <div class="col">
             <button type="reset">Zurücksetzen</button>

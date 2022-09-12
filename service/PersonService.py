@@ -2,8 +2,7 @@ from flask import make_response
 from flask_restful import Resource, reqparse
 from data.PersonDAO import PersonDAO
 from model.Person import Person
-from util.token import token_required
-
+from util.authorization import token_required, teacher_required
 
 parser = reqparse.RequestParser()
 parser.add_argument('email', location='form', help='email')
@@ -14,7 +13,7 @@ parser.add_argument('role', location='form', help='Rolle')
 
 class PersonService(Resource):
     """
-    short description
+    crud services for a person
 
     author: Marcel Suter
     """
@@ -29,7 +28,7 @@ class PersonService(Resource):
         """
         pass
 
-    def get(self, user, email):
+    def get(self, email):
         """
         gets a person identified by the email
         :param email: the unique key
@@ -47,7 +46,8 @@ class PersonService(Resource):
             data, http_status
         )
 
-    def post(self, user):
+    @teacher_required
+    def post(self):
         """
         creates a new person
         :return: http response
@@ -63,7 +63,8 @@ class PersonService(Resource):
         person_dao.save_person(person)
         return person, 201
 
-    def put(self, user):
+    @teacher_required
+    def put(self):
         """
         updates an existing person
         :return: http response

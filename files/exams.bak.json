@@ -1,7 +1,7 @@
 [
  {
    "exam_uuid": "1",
-   "datetime": "2022-09-13 15:00:00",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GB20c",
    "student": "Lo.Fl@bzz.local",
    "module": "M3",
@@ -14,7 +14,7 @@
  },
  {
    "exam_uuid": "2",
-   "datetime": "2022-09-13 15:00:01",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GB20c",
    "student": "Lo.Fl@bzz.local",
    "module": "N2",
@@ -27,7 +27,7 @@
  },
  {
    "exam_uuid": "3",
-   "datetime": "2022-09-13 15:00:02",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GB20c",
    "student": "Fa.No@bzz.local",
    "module": "M3",
@@ -40,7 +40,7 @@
  },
  {
    "exam_uuid": "4",
-   "datetime": "2022-09-13 15:00:03",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GB20c",
    "student": "Fa.No@bzz.local",
    "module": "N2",
@@ -53,7 +53,7 @@
  },
  {
    "exam_uuid": "5",
-   "datetime": "2022-09-13 15:00:04",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GB20c",
    "student": "Ra.Pa@bzz.local",
    "module": "M3",
@@ -66,7 +66,7 @@
  },
  {
    "exam_uuid": "6",
-   "datetime": "2022-09-13 15:00:05",
+   "event_uuid": "32a2427d-6c14-4709-99b3-3a3e1dcd2d09",
    "cohort": "GB20c",
    "student": "No.Sc@bzz.local",
    "module": "M3",
@@ -79,7 +79,7 @@
  },
  {
    "exam_uuid": "7",
-   "datetime": "2022-09-13 15:00:06",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GB21e",
    "student": "Si.De@bzz.local",
    "module": "Französisch",
@@ -92,7 +92,7 @@
  },
  {
    "exam_uuid": "8",
-   "datetime": "2022-09-13 15:00:07",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GC19b",
    "student": "Yo.Ze@bzz.local",
    "module": "Deutsch",
@@ -105,7 +105,7 @@
  },
  {
    "exam_uuid": "9",
-   "datetime": "2022-09-13 15:00:08",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GC19b",
    "student": "Yo.Ze@bzz.local",
    "module": "Gesellschaft",
@@ -118,7 +118,7 @@
  },
  {
    "exam_uuid": "10",
-   "datetime": "2022-09-13 15:00:09",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GC19b",
    "student": "Yo.Ze@bzz.local",
    "module": "Wirtschaft",
@@ -131,7 +131,7 @@
  },
  {
    "exam_uuid": "11",
-   "datetime": "2022-09-13 15:00:10",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GC19b",
    "student": "Yo.Ze@bzz.local",
    "module": "Wirtschaft",
@@ -144,7 +144,7 @@
  },
  {
    "exam_uuid": "12",
-   "datetime": "2022-09-13 15:00:11",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GC19b",
    "student": "Yo.Ze@bzz.local",
    "module": "DHK",
@@ -157,7 +157,7 @@
  },
  {
    "exam_uuid": "13",
-   "datetime": "2022-09-13 15:00:12",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "GC20b",
    "student": "Lo.Ma@bzz.local",
    "module": "Wirtschaft",
@@ -170,7 +170,7 @@
  },
  {
    "exam_uuid": "14",
-   "datetime": "2022-09-13 15:00:13",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "AK19a",
    "student": "Sa.Ni@bzz.local",
    "module": "122",
@@ -183,7 +183,7 @@
  },
  {
    "exam_uuid": "15",
-   "datetime": "2022-09-13 15:00:14",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "AK20a",
    "student": "No.Ha@bzz.local",
    "module": "153",
@@ -196,7 +196,7 @@
  },
  {
    "exam_uuid": "16",
-   "datetime": "2022-09-13 15:00:15",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "AK20a",
    "student": "No.Ha@bzz.local",
    "module": "153",
@@ -209,7 +209,7 @@
  },
  {
    "exam_uuid": "17",
-   "datetime": "2022-09-13 15:00:16",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "AK20b",
    "student": "Na.Am@bzz.local",
    "module": "153",
@@ -222,7 +222,7 @@
  },
  {
    "exam_uuid": "18",
-   "datetime": "2022-09-13 15:00:17",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "AK20b",
    "student": "Na.Am@bzz.local",
    "module": "153",
@@ -235,7 +235,7 @@
  },
  {
    "exam_uuid": "19",
-   "datetime": "2022-09-13 15:00:18",
+   "event_uuid": "32a2427d-6c14-4709-99b3-3a3e1dcd2d09",
    "cohort": "AK20b",
    "student": "Mi.Di@bzz.local",
    "module": "153",
@@ -248,7 +248,7 @@
  },
  {
    "exam_uuid": "20",
-   "datetime": "2022-09-13 15:00:19",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "AK21b",
    "student": "El.La@bzz.local",
    "module": "162",
@@ -261,7 +261,7 @@
  },
  {
    "exam_uuid": "21",
-   "datetime": "2022-09-13 15:00:20",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK19a",
    "student": "iv.Go@bzz.local",
    "module": "M122",
@@ -274,7 +274,7 @@
  },
  {
    "exam_uuid": "22",
-   "datetime": "2022-09-13 15:00:21",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK19b",
    "student": "iv.Go@bzz.local",
    "module": "M183",
@@ -287,7 +287,7 @@
  },
  {
    "exam_uuid": "23",
-   "datetime": "2022-09-13 15:00:22",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20a",
    "student": "Fr.Fe@bzz.local",
    "module": "153",
@@ -300,7 +300,7 @@
  },
  {
    "exam_uuid": "24",
-   "datetime": "2022-09-13 15:00:23",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20a",
    "student": "Fr.Fe@bzz.local",
    "module": "153",
@@ -313,7 +313,7 @@
  },
  {
    "exam_uuid": "25",
-   "datetime": "2022-09-13 15:00:24",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20a",
    "student": "Ph.Ry@bzz.local",
    "module": "153",
@@ -326,7 +326,7 @@
  },
  {
    "exam_uuid": "26",
-   "datetime": "2022-09-13 15:00:25",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20a",
    "student": "Ph.Ry@bzz.local",
    "module": "153",
@@ -339,7 +339,7 @@
  },
  {
    "exam_uuid": "27",
-   "datetime": "2022-09-13 15:00:26",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20a",
    "student": "Ar.Ti@bzz.local",
    "module": "153",
@@ -352,7 +352,7 @@
  },
  {
    "exam_uuid": "28",
-   "datetime": "2022-09-13 15:00:27",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Di.Fa@bzz.local",
    "module": "153",
@@ -365,7 +365,7 @@
  },
  {
    "exam_uuid": "29",
-   "datetime": "2022-09-13 15:00:28",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Di.Fa@bzz.local",
    "module": "153",
@@ -378,7 +378,7 @@
  },
  {
    "exam_uuid": "30",
-   "datetime": "2022-09-13 15:00:29",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Mo.Ha@bzz.local",
    "module": "153",
@@ -391,7 +391,7 @@
  },
  {
    "exam_uuid": "31",
-   "datetime": "2022-09-13 15:00:30",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Mo.Ha@bzz.local",
    "module": "153",
@@ -404,7 +404,7 @@
  },
  {
    "exam_uuid": "32",
-   "datetime": "2022-09-13 15:00:31",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Ju.Ja@bzz.local",
    "module": "153",
@@ -417,7 +417,7 @@
  },
  {
    "exam_uuid": "33",
-   "datetime": "2022-09-13 15:00:32",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Ju.Ja@bzz.local",
    "module": "120",
@@ -430,7 +430,7 @@
  },
  {
    "exam_uuid": "34",
-   "datetime": "2022-09-13 15:00:33",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Ma.Jo@bzz.local",
    "module": "153",
@@ -443,7 +443,7 @@
  },
  {
    "exam_uuid": "35",
-   "datetime": "2022-09-13 15:00:34",
+   "event_uuid": "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Ma.Jo@bzz.local",
    "module": "153",
@@ -456,7 +456,7 @@
  },
  {
    "exam_uuid": "36",
-   "datetime": "2022-09-13 15:00:35",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Ma.Jo@bzz.local",
    "module": "153",
@@ -469,7 +469,7 @@
  },
  {
    "exam_uuid": "37",
-   "datetime": "2022-09-13 15:00:36",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "BK20b",
    "student": "Ma.Jo@bzz.local",
    "module": "120",
@@ -482,7 +482,7 @@
  },
  {
    "exam_uuid": "38",
-   "datetime": "2022-09-13 15:00:37",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CD20b",
    "student": "Me.Aj@bzz.local",
    "module": "WuG",
@@ -495,7 +495,7 @@
  },
  {
    "exam_uuid": "39",
-   "datetime": "2022-09-13 15:00:38",
+   "event_uuid": "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CD20b",
    "student": "An.De@bzz.local",
    "module": "WuG",
@@ -508,7 +508,7 @@
  },
  {
    "exam_uuid": "40",
-   "datetime": "2022-09-13 15:00:39",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CD20b",
    "student": "Cu.Ka@bzz.local",
    "module": "WuG",
@@ -521,7 +521,7 @@
  },
  {
    "exam_uuid": "41",
-   "datetime": "2022-09-13 15:00:40",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CD20b",
    "student": "Fe.Pa@bzz.local",
    "module": "WuG",
@@ -534,7 +534,7 @@
  },
  {
    "exam_uuid": "42",
-   "datetime": "2022-09-13 15:00:41",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CD20b",
    "student": "Al.Ve@bzz.local",
    "module": "WuG",
@@ -547,7 +547,7 @@
  },
  {
    "exam_uuid": "43",
-   "datetime": "2022-09-13 15:00:42",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Ka.Be@bzz.local",
    "module": "Französisch",
@@ -560,7 +560,7 @@
  },
  {
    "exam_uuid": "44",
-   "datetime": "2022-09-13 15:00:43",
+   "event_uuid": "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Al.Bu@bzz.local",
    "module": "Französisch",
@@ -573,7 +573,7 @@
  },
  {
    "exam_uuid": "45",
-   "datetime": "2022-09-13 15:00:44",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Is.Co@bzz.local",
    "module": "Französisch",
@@ -586,7 +586,7 @@
  },
  {
    "exam_uuid": "46",
-   "datetime": "2022-09-13 15:00:45",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Na.Ge@bzz.local",
    "module": "Französisch",
@@ -599,7 +599,7 @@
  },
  {
    "exam_uuid": "47",
-   "datetime": "2022-09-13 15:00:46",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Ph.Gr@bzz.local",
    "module": "Französisch",
@@ -612,7 +612,7 @@
  },
  {
    "exam_uuid": "48",
-   "datetime": "2022-09-13 15:00:47",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "An.Ka@bzz.local",
    "module": "Französisch",
@@ -625,7 +625,7 @@
  },
  {
    "exam_uuid": "49",
-   "datetime": "2022-09-13 15:00:48",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Lu.Oe@bzz.local",
    "module": "Französisch",
@@ -638,7 +638,7 @@
  },
  {
    "exam_uuid": "50",
-   "datetime": "2022-09-13 15:00:49",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Er.Qu@bzz.local",
    "module": "Französisch",
@@ -651,7 +651,7 @@
  },
  {
    "exam_uuid": "51",
-   "datetime": "2022-09-13 15:00:50",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Ch.Sa@bzz.local",
    "module": "Französisch",
@@ -664,7 +664,7 @@
  },
  {
    "exam_uuid": "52",
-   "datetime": "2022-09-13 15:00:51",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "CH20a",
    "student": "Bl.Sh@bzz.local",
    "module": "Französisch",
@@ -677,7 +677,7 @@
  },
  {
    "exam_uuid": "53",
-   "datetime": "2022-09-13 15:00:52",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA19a",
    "student": "Da.Re@bzz.local",
    "module": "284",
@@ -690,7 +690,7 @@
  },
  {
    "exam_uuid": "54",
-   "datetime": "2022-09-13 15:00:53",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20a",
    "student": "Li.Ew@bzz.local",
    "module": "284",
@@ -703,7 +703,7 @@
  },
  {
    "exam_uuid": "55",
-   "datetime": "2022-09-13 15:00:54",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20a",
    "student": "Da.Ra@bzz.local",
    "module": "284",
@@ -716,7 +716,7 @@
  },
  {
    "exam_uuid": "56",
-   "datetime": "2022-09-13 15:00:55",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20a",
    "student": "Ra.Sc@bzz.local",
    "module": "284",
@@ -729,7 +729,7 @@
  },
  {
    "exam_uuid": "57",
-   "datetime": "2022-09-13 15:00:56",
+   "event_uuid": "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20a",
    "student": "El.St@bzz.local",
    "module": "284",
@@ -742,7 +742,7 @@
  },
  {
    "exam_uuid": "58",
-   "datetime": "2022-09-13 15:00:57",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20b",
    "student": "Sv.Gi@bzz.local",
    "module": "284",
@@ -755,7 +755,7 @@
  },
  {
    "exam_uuid": "59",
-   "datetime": "2022-09-13 15:00:58",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20b",
    "student": "Cy.Sh@bzz.local",
    "module": "283",
@@ -768,7 +768,7 @@
  },
  {
    "exam_uuid": "60",
-   "datetime": "2022-09-13 15:00:59",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20b",
    "student": "Cy.Sh@bzz.local",
    "module": "284",
@@ -781,7 +781,7 @@
  },
  {
    "exam_uuid": "61",
-   "datetime": "2022-09-13 15:00:60",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20c",
    "student": "Mo.Le@bzz.local",
    "module": "284",
@@ -794,7 +794,7 @@
  },
  {
    "exam_uuid": "62",
-   "datetime": "2022-09-13 15:00:61",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20c",
    "student": "Ma.Wo@bzz.local",
    "module": "284",
@@ -807,7 +807,7 @@
  },
  {
    "exam_uuid": "63",
-   "datetime": "2022-09-13 15:00:62",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20c",
    "student": "Va.Wo@bzz.local",
    "module": "284",
@@ -820,7 +820,7 @@
  },
  {
    "exam_uuid": "64",
-   "datetime": "2022-09-13 15:00:63",
+   "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
    "cohort": "EA20d",
    "student": "Li.We@bzz.local",
    "module": "284",

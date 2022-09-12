@@ -19,7 +19,7 @@ class Event:
 
     def to_json(self):
         jstring = '{"event_uuid":"' + self.event_uuid + '",' + \
-                  '"datetime": "' + self.datetime.strftime('%Y-%m-%d %H:%M:%S') + ',' + \
+                  '"datetime": "' + self.datetime.strftime('%Y-%m-%d %H:%M:%S') + '",' + \
                   '"supervisors":' + json.dumps(self.supervisors) + ',' + \
                   '"rooms":' + json.dumps(self.rooms) + '}'
         return jstring

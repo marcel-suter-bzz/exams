@@ -5,20 +5,35 @@ from data.PersonDAO import PersonDAO
 from model.Exam import Exam
 
 
-def condition(exam, filter_value):
+def condition(exam, student, teacher, date, status):
     """
     condition for filtering the examlist
     :param exam: an exam object to be examined
-    :param filter_value: the filter condition
+    :param student
+    :param teacher
+    :param date
+    :param status
     :return: matches filter True/False
     """
-    return True # FIXME
-    filter_value = filter_value.lower()
-    if (filter_value in exam.teacher.email.lower() or
-            filter_value in exam.student.email.lower() or
-            exam.event_uuid == filter_value):
-        return True
-    return False
+    match = True
+    if student is not None and student != "":
+        student = student.lower()
+        if student not in exam.student.firstname.lower() and student not in exam.student.lastname.lower():
+            match = False
+    if teacher is not None and teacher != "":
+        teacher = teacher.lower()
+        if teacher not in exam.teacher.firstname.lower() and teacher not in exam.teacher.lastname.lower():
+            match = False
+    if date is not None and date != "":
+        if date != exam.event_uuid:
+            match = False
+    if status is None or status == "":
+        status = "all"
+    if status == "open" and exam.status not in ['pendent', 'offen', 'abgegeben', 'erhalten']:
+        match = False
+    if status == "closed" and exam.status not in ['erledigt', 'pnab', 'gelöscht']:
+        match = False
+    return match
 
 
 class ExamDAO:
@@ -38,16 +53,19 @@ class ExamDAO:
         self._examdict = {}
         self.load_exams()
 
-    def filtered_list(self, filter_value):
+    def filtered_list(self, student, teacher, date, status):
         """
         returns the filtered list of exams
-        :param filter_value: the filter to be applied
+        :param student
+        :param teacher
+        :param date
+        :param status
         :return: list of exams
         """
 
         filtered = []
         for (key, exam) in self._examdict.items():
-            if condition(exam, filter_value):
+            if condition(exam, student, teacher, date, status):
                 filtered.append(exam)
                 if len(filtered) >= 20:
                     break
@@ -70,14 +88,15 @@ class ExamDAO:
         :param exam:
         :return:
         """
-        self.load_exams()
-        if exam.exam_uuid is None:
-            exam.exam_uuid = str(uuid.uuid4())
         self._examdict[exam.exam_uuid] = exam
-        jstring = Exam.schema().dumps(list(self._examdict.values()), many=True)
+        exams_json = '['
+        for key in self._examdict:
+            data = self._examdict[key].to_json(False)
+            exams_json += data + ','
+        exams_json = exams_json[:-1] + ']'
 
         file = open('./files/exams.json', 'w')
-        file.write(jstring)
+        file.write(exams_json)
         file.close()
 
     def load_exams(self):

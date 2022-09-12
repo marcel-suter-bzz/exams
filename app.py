@@ -1,7 +1,7 @@
 from flask import Flask, render_template, send_from_directory
 from flask_restful import  Api
 
-
+from service.EventlistService import EventlistService
 from service.AuthorizationService import AuthorizationService
 from service.EventService import EventService
 from service.ExamService import ExamService
@@ -10,15 +10,17 @@ from service.PersonService import PersonService
 from service.PeopleListService import PeoplelistService
 
 app = Flask(__name__)
-app.config['SECRET_KEY']='004f2af45d3a4e161a7dd2d17fdae47f'
+app.config.from_pyfile('config.py')
+#app.config['SECRET_KEY']='004f2af45d3a4e161a7dd2d17fdae47f'
 api = Api(app)
 
 api.add_resource(ExamService, '/exam', '/exam/<exam_uuid>')
-api.add_resource(ExamlistService, '/exams/<filter_value>')
+api.add_resource(ExamlistService, '/exams')
 api.add_resource(PersonService, '/person')
 api.add_resource(PeoplelistService, '/people/<filter_value>')
 api.add_resource(AuthorizationService, '/login')
-api.add_resource(EventService, '/event/date=<date>', '/event/<event_uuid>')
+api.add_resource(EventService, '/event/<event_uuid>')
+api.add_resource(EventlistService, '/events', '/events/<date>')
 
 
 @app.route('/')

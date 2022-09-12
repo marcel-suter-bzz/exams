@@ -1,8 +1,8 @@
-from flask import make_response
-from flask_restful import Resource
+from flask import make_response, g
+from flask_restful import Resource, reqparse
 
 from data.ExamDAO import ExamDAO
-from util.token import token_required
+from util.authorization import token_required
 
 
 class ExamlistService(Resource):
@@ -20,16 +20,27 @@ class ExamlistService(Resource):
         Parameters:
 
         """
-        pass
+        self.parser = reqparse.RequestParser()
+        self.parser.add_argument('student', location='args', help='student')
+        self.parser.add_argument('teacher', location='args', help='teacher')
+        self.parser.add_argument('date', location='args', help='date')
+        self.parser.add_argument('status', location='args', help='status')
 
-    def get(self, user, filter_value):
+    def get(self):
         """
         get a list of exams
-        :param filter_value: the filter to be applied
         :return: JSON object with the exams
         """
+        args = self.parser.parse_args()
+        '''  TODO
+        if (g.user.role == 'student'):
+            args['student'] = g.user.email
+            args['teacher'] = ''
+            args['date'] = ''
+            args['status'] = '' 
+            '''
         exam_dao = ExamDAO()
-        examlist = exam_dao.filtered_list(filter_value)
+        examlist = exam_dao.filtered_list(args['student'], args['teacher'], args['date'], args['status'])
         exams_json = '['
         for exam in examlist:
             data = exam.to_json()

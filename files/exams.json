@@ -66,7 +66,7 @@
  },
  {
    "exam_uuid": "6",
-   "event_uuid": "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
+   "event_uuid": "32a2427d-6c14-4709-99b3-3a3e1dcd2d09",
    "cohort": "GB20c",
    "student": "No.Sc@bzz.local",
    "module": "M3",
@@ -235,7 +235,7 @@
  },
  {
    "exam_uuid": "19",
-   "event_uuid": "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
+   "event_uuid": "32a2427d-6c14-4709-99b3-3a3e1dcd2d09",
    "cohort": "AK20b",
    "student": "Mi.Di@bzz.local",
    "module": "153",
