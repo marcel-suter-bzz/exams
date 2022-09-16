@@ -54,7 +54,8 @@ function lockForm(formId, locked = true) {
     const fields = form.querySelectorAll("select,input");
     for (let i=0; i<fields.length; i++) {
         const field = fields[i];
-        if (field.tagName === "INPUT") {
+        if (field.id == "student" || field.id == "teacher" || field.id == "exam_uuid");
+        else if (field.tagName === "INPUT") {
             field.readOnly = locked;
         } else if (field.tagName === "SELECT") {
             field.disabled = locked;

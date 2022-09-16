@@ -45,7 +45,10 @@ class ExamlistService(Resource):
         for exam in examlist:
             data = exam.to_json()
             exams_json += data + ','
-        exams_json = exams_json[:-1] + ']'
+        if len(exams_json) > 1:
+            exams_json = exams_json[:-1] + ']'
+        else:
+            exams_json = ""
         return make_response(
             exams_json, 200
         )

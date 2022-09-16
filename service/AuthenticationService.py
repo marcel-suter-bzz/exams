@@ -1,13 +1,10 @@
 from datetime import datetime, timedelta
 
 import jwt
-from flask import make_response, jsonify, Flask
+from flask import make_response, jsonify, Flask, current_app
 from flask_restful import Resource, reqparse
 
 from data.PersonDAO import PersonDAO
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '004f2af45d3a4e161a7dd2d17fdae47f'
 
 parser = reqparse.RequestParser()
 parser.add_argument('email', location='form', help='email')
@@ -16,7 +13,7 @@ parser.add_argument('password', location='form', help='password')
 
 class AuthorizationService(Resource):
     """
-    short description
+    services for Authentication
 
     author: Marcel Suter
     """
@@ -45,7 +42,7 @@ class AuthorizationService(Resource):
                 'role': person.role,
                 'exp': datetime.utcnow() + timedelta(minutes=45)
             },
-                app.config['SECRET_KEY'], "HS256")
+                current_app.config['SECRET_KEY'], "HS256")
 
             return jsonify({
                 'token': token,

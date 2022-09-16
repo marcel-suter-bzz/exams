@@ -1,34 +1,14 @@
-.table-fixed tbody {
-    height: 400px;
-    overflow-y: auto;
-    width:100%;
+html {
+  position: relative;
+  min-height: 100%;
 }
-
-.table-fixed thead,
-.table-fixed tbody,
-.table-fixed tr,
-.table-fixed td,
-.table-fixed th {
-    display: block;
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
 }
-.table-fixed tbody td,
-.table-fixed tbody th,
-.table-fixed thead > tr > th {
-    float: left;
-    position: relative;
-
-}
-
-#examlist tbody {
-    height: 200px !important;
-    overflow-y: auto;
-    width: 100%;
-}
-
-#checkboxes label {
-  display: block;
-}
-
-#checkboxes label:hover {
-  background-color: #1e90ff;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 30px; /* Vertically center the text there */
 }

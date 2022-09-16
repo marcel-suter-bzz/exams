@@ -3,6 +3,7 @@ import uuid
 from flask import make_response
 from flask_restful import Resource, fields, reqparse
 
+from data.PersonDAO import PersonDAO
 from model.Person import Person
 from util.authorization import token_required, teacher_required
 from data.ExamDAO import ExamDAO
@@ -99,10 +100,11 @@ class ExamService(Resource):
         :param args:
         :return:
         """
-        if args.exam_uuid is None:
+        if args.exam_uuid is None or args.exam_uuid == '':
             args.exam_uuid = str(uuid.uuid4())
-        teacher = Person(args.teacher, '', '', '')
-        student = Person(args.student, '', '', '')
+        person_dao = PersonDAO()
+        teacher = person_dao.read_person(args.teacher)
+        student = person_dao.read_person(args.student)
         exam = Exam(
             args.exam_uuid,
             teacher,

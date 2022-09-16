@@ -2,7 +2,7 @@ from flask import Flask, render_template, send_from_directory
 from flask_restful import  Api
 
 from service.EventlistService import EventlistService
-from service.AuthorizationService import AuthorizationService
+from service.AuthenticationService import AuthorizationService
 from service.EventService import EventService
 from service.ExamService import ExamService
 from service.ExamlistService import ExamlistService
@@ -10,8 +10,7 @@ from service.PersonService import PersonService
 from service.PeopleListService import PeoplelistService
 
 app = Flask(__name__)
-app.config.from_pyfile('config.py')
-#app.config['SECRET_KEY']='004f2af45d3a4e161a7dd2d17fdae47f'
+app.config.from_pyfile('./.env')
 api = Api(app)
 
 api.add_resource(ExamService, '/exam', '/exam/<exam_uuid>')

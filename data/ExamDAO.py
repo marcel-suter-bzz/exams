@@ -18,20 +18,20 @@ def condition(exam, student, teacher, date, status):
     match = True
     if student is not None and student != "":
         student = student.lower()
-        if student not in exam.student.firstname.lower() and student not in exam.student.lastname.lower():
+        if student not in exam.student.email.lower():
             match = False
     if teacher is not None and teacher != "":
         teacher = teacher.lower()
-        if teacher not in exam.teacher.firstname.lower() and teacher not in exam.teacher.lastname.lower():
+        if teacher not in exam.teacher.email.lower():
             match = False
-    if date is not None and date != "":
+    if date is not None and date != "all":
         if date != exam.event_uuid:
             match = False
     if status is None or status == "":
         status = "all"
-    if status == "open" and exam.status not in ['pendent', 'offen', 'abgegeben', 'erhalten']:
+    elif status == "open" and exam.status not in ['pendent', 'offen', 'abgegeben', 'erhalten']:
         match = False
-    if status == "closed" and exam.status not in ['erledigt', 'pnab', 'gelöscht']:
+    elif status == "closed" and exam.status not in ['erledigt', 'pnab', 'gelöscht']:
         match = False
     return match
 
@@ -67,7 +67,7 @@ class ExamDAO:
         for (key, exam) in self._examdict.items():
             if condition(exam, student, teacher, date, status):
                 filtered.append(exam)
-                if len(filtered) >= 20:
+                if len(filtered) >= 100:
                     break
         return filtered
 

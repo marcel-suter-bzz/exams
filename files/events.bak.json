@@ -10,5 +10,11 @@
     "datetime": "2022-11-24 09:00:00",
     "rooms" : ["H100", "H131"],
     "supervisors": ["carlo.castor@bzz.local", "hanna.heimspiel@bzz.local"]
+  },
+  {
+    "event_uuid" : "20bc11938-d5cc-4e9e-802b-223a6775d7e0",
+    "datetime": "2023-02-09 09:00:00",
+    "rooms" : ["H100", "H131"],
+    "supervisors": ["carlo.castor@bzz.local", "hanna.heimspiel@bzz.local"]
   }
 ]
