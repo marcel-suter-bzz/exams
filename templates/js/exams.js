@@ -69,7 +69,7 @@ function selectExam(event) {
  * @param uuid
  */
 function readExam(uuid) {
-    fetch("./exam/" + uuid,
+    fetch(API_URL + "/exam/" + uuid,
         {
             headers: {
                 "Authorization": "Bearer " + readStorage("token")
@@ -119,7 +119,7 @@ function showExam(exam) {
  * @param filter
  */
 function readExamlist(filter) {
-    fetch("./exams?" + filter,
+    fetch(API_URL + "/exams?" + filter,
         {
             headers: {
                 "Authorization": "Bearer " + readStorage("token")
@@ -229,7 +229,7 @@ function saveExam(event) {
     event.preventDefault();
     const examForm = document.getElementById("editform");
     if (examForm.checkValidity()) {
-        const url = "./exam";
+        const url = API_URL + "/exam";
         const fields = ["exam_uuid", "teacher", "module", "exam_num", "cohort", "duration", "event_uuid", "student", "status", "tools", "remarks"];
         let data = new URLSearchParams();
         for (let field of fields) {

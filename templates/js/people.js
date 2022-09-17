@@ -29,7 +29,7 @@ function searchPeople(event) {
  * @param filter
  */
 function loadPeople(filter, fieldname) {
-    fetch("./people/" + filter,
+    fetch(API_URL + "/people/" + filter,
         {
             headers: {
                 "Authorization": "Bearer " + readStorage("token")

@@ -1,5 +1,4 @@
 import json
-import uuid
 
 from data.PersonDAO import PersonDAO
 from model.Exam import Exam
@@ -16,23 +15,26 @@ def condition(exam, student, teacher, date, status):
     :return: matches filter True/False
     """
     match = True
-    if student is not None and student != "":
-        student = student.lower()
-        if student not in exam.student.email.lower():
+    try:
+        if student is not None and student != "":
+            student = student.lower()
+            if student not in exam.student.email.lower():
+                match = False
+        if teacher is not None and teacher != "":
+            teacher = teacher.lower()
+            if teacher not in exam.teacher.email.lower():
+                match = False
+        if date is not None and date != "all":
+            if date != exam.event_uuid:
+                match = False
+        if status is None or status == "":
+            status = "all"
+        elif status == "open" and exam.status not in ['pendent', 'offen', 'abgegeben', 'erhalten']:
             match = False
-    if teacher is not None and teacher != "":
-        teacher = teacher.lower()
-        if teacher not in exam.teacher.email.lower():
+        elif status == "closed" and exam.status not in ['erledigt', 'pnab', 'gelöscht']:
             match = False
-    if date is not None and date != "all":
-        if date != exam.event_uuid:
-            match = False
-    if status is None or status == "":
-        status = "all"
-    elif status == "open" and exam.status not in ['pendent', 'offen', 'abgegeben', 'erhalten']:
-        match = False
-    elif status == "closed" and exam.status not in ['erledigt', 'pnab', 'gelöscht']:
-        match = False
+    except:
+      print ('Error in ExamDAO.condition')
     return match
 
 
@@ -113,17 +115,18 @@ class ExamDAO:
             teacher = person_dao.read_person(item['teacher'])
             student = person_dao.read_person(item['student'])
             exam = Exam(
-                item['exam_uuid'],
-                teacher,
-                student,
-                item['cohort'],
-                item['module'],
-                item['exam_num'],
-                item['duration'],
-                item['remarks'],
-                item['tools'],
-                item['event_uuid'],
-                item['status']
+                exam_uuid=item['exam_uuid'],
+                event_uuid=item['event_uuid'],
+                teacher=teacher,
+                student=student,
+                cohort=item['cohort'],
+                module=item['module'],
+                exam_num=item['exam_num'],
+                missed=item['missed'],
+                duration=item['duration'],
+                remarks=item['remarks'],
+                tools=item['tools'],
+                status=item['status']
             )
             self._examdict[key] = exam
 

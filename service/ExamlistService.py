@@ -48,7 +48,7 @@ class ExamlistService(Resource):
         if len(exams_json) > 1:
             exams_json = exams_json[:-1] + ']'
         else:
-            exams_json = ""
+            exams_json = "[]"
         return make_response(
             exams_json, 200
         )

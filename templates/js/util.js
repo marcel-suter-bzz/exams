@@ -3,6 +3,7 @@
  * @author Marcel Suter
  */
 
+const API_URL = "http://127.0.0.1:5000";
 /*
  * shows a info/warn/error-message
  * @param type  message type

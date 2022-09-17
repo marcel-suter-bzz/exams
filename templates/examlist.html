@@ -40,7 +40,7 @@
           <tr>
             <th scope="col">&nbsp;</th>
             <th scope="col">Lernender</th>
-            <th scope="col">Datum</th>
+            <th scope="col">Termin</th>
             <th scope="col">Lehrperson</th>
             <th scope="col">Klasse</th>
             <th scope="col">Fach / Prüfung</th>
@@ -65,7 +65,7 @@
                   <input type="checkbox" id="open" checked/>
                   Offen</label>
                 <label for="closed">
-                  <input type="checkbox" id="closed" checked/>
+                  <input type="checkbox" id="closed" />
                   Abgeschlossen</label>
               </div>
             </th>
@@ -91,22 +91,22 @@
         <div class="col-lg-6 col-md-12">
           <div class="">
             <label for="student.fullname" class="form-label">Lernender</label>
-            <input type="text" class="form-control" id="student.fullname" list="student.list" autocomplete="off"/>
+            <input type="text" required class="form-control" id="student.fullname" list="student.list" autocomplete="off"/>
             <datalist id="student.list">
               <option value="">
             </datalist>
           </div>
           <div class="">
-            <label for="date" class="form-label">Datum</label>
-            <select class="form-select" id="event_uuid"></select>
+            <label for="date" class="form-label">Nachprüfungstermin</label>
+            <select required class="form-select" id="event_uuid"></select>
           </div>
           <div class="">
             <label for="cohort" class="form-label">Klasse</label>
-            <input type="text" class="form-control" id="cohort"/>
+            <input type="text" required class="form-control" id="cohort"/>
           </div>
           <div class="">
             <label for="teacher.fullname" class="form-label">Lehrperson</label>
-            <input type="text" class="form-control" id="teacher.fullname"
+            <input type="text" required class="form-control" id="teacher.fullname"
                    list="teacher.list" autocomplete="off"/>
             <datalist id="teacher.list">
               <option value="">
@@ -115,20 +115,24 @@
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="">
-            <label for="module" class="form-label">Fach</label>
-            <input type="text" class="form-control" id="module"/>
+            <label for="module" class="form-label">Fach/Modul</label>
+            <input type="text" required class="form-control" id="module"/>
           </div>
           <div class="">
             <label for="exam_num" class="form-label">Prüfung</label>
             <input type="text" class="form-control" id="exam_num"/>
           </div>
           <div class="">
+            <label for="missed" class="form-label">Prüfungsdatum</label>
+            <input type="date" required class="form-control" id="missed"/>
+          </div>
+          <div class="">
             <label for="duration" class="form-label">Dauer</label>
-            <input type="number" class="form-control" id="duration"/>
+            <input type="number" required class="form-control" id="duration"/>
           </div>
           <div class="">
             <label for="status" class="form-label">Status</label>
-            <select id="status" name="status" class="form-select">
+            <select id="status" required class="form-select">
               <option value="pendent">pendent</option>
               <option value="offen">offen</option>
               <option value="abgegeben">abgegeben</option>

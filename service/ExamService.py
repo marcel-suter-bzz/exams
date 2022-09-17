@@ -9,25 +9,6 @@ from util.authorization import token_required, teacher_required
 from data.ExamDAO import ExamDAO
 from model.Exam import Exam
 
-person_fields = {
-    'email': fields.String,
-    'firstname': fields.String,
-    'lastname': fields.String
-}
-exam_fields = {
-    'exam_uuid': fields.String,
-    'teacher': fields.Nested(person_fields),
-    'student': fields.Nested(person_fields),
-    'module': fields.String,
-    'exam_num': fields.String,
-    'duration': fields.Integer,
-    'remarks': fields.String,
-    'tools': fields.String,
-    'event_uuid': fields.String,
-    'status': fields.String
-}
-
-
 class ExamService(Resource):
     """
     services for CRUD of a single exam
@@ -45,15 +26,17 @@ class ExamService(Resource):
         """
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('exam_uuid', location='form', help='uuid')
-        self.parser.add_argument('teacher', location='form', help='teacher')
+        self.parser.add_argument('event_uuid', location='form', help='event_uuid')
         self.parser.add_argument('student', location='form', help='student')
+        self.parser.add_argument('teacher', location='form', help='teacher')
         self.parser.add_argument('cohort', location='form', help='cohort')
         self.parser.add_argument('module', location='form', help='module')
         self.parser.add_argument('exam_num', location='form', help='exam-num')
         self.parser.add_argument('duration', location='form', type=str, help='Muss eine Ganzzahl sein')
+        self.parser.add_argument('missed', location='form', help='Muss ein gültiges Datum sein')
         self.parser.add_argument('remarks', location='form', help='remarks')
         self.parser.add_argument('tools', location='form', help='tools')
-        self.parser.add_argument('event_uuid', location='form', help='event_uuid')
+
         self.parser.add_argument('status', location='form', help='status')
 
     def get(self, exam_uuid):
@@ -106,17 +89,18 @@ class ExamService(Resource):
         teacher = person_dao.read_person(args.teacher)
         student = person_dao.read_person(args.student)
         exam = Exam(
-            args.exam_uuid,
-            teacher,
-            student,
-            args.cohort,
-            args.module,
-            args.exam_num,
-            args.duration,
-            args.remarks,
-            args.tools,
-            args.event_uuid,
-            args.status
+            exams_uuid=args.exam_uuid,
+            teacher=teacher,
+            student=student,
+            cohort=args.cohort,
+            module=args.module,
+            exam_num=args.exam_num,
+            duration=args.duration,
+            missed=args.missed,
+            remarks=args.remarks,
+            tools=args.tools,
+            event_uuid=args.event_uuid,
+            status=args.status
         )
         exam_dao = ExamDAO()
         exam_dao.save_exam(exam)

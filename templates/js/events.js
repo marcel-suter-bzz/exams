@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * reads all events matching a filter
  */
 function readEventList() {
-    fetch("./events",
+    fetch(API_URL + "/events",
         {
             headers: {
                 "Authorization": "Bearer " + readStorage("token")

@@ -1,7 +1,6 @@
 import json
 import uuid
-from datetime import datetime
-
+from dateutil import parser
 from model.Event import Event
 
 
@@ -30,10 +29,10 @@ class EventDAO:
         """
         date = None
         if filter_value is not None:
-            date = datetime.strptime(filter_value, '%Y-%m-%d')
+            date = parser.parse(filter_value)
         filtered = []
         for (key, event) in self._eventdict.items():
-            if date is None or event.datetime.date() == date.date():
+            if date is None or event.timestamp.date() == date.date():
                 filtered.append(event)
                 if len(filtered) >= 20:
                     break
@@ -81,7 +80,7 @@ class EventDAO:
             key = item['event_uuid']
             event = Event(
                 item['event_uuid'],
-                datetime.strptime(item['datetime'], '%Y-%m-%d %H:%M:%S'),
+                item['timestamp'],
                 item['rooms'],
                 item['supervisors']
             )

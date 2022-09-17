@@ -9,7 +9,7 @@ function sendLogin(event) {
     event.preventDefault();
     const personForm = document.getElementById("loginform");
     if (personForm.checkValidity() == true) {
-        const url = "./login";
+        const url = API_URL + "/login";
 
         let data = new URLSearchParams();
         data.set("email", document.getElementById("email").value);

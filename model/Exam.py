@@ -11,15 +11,16 @@ class Exam(dict):
     """
 
     exam_uuid: str
-    teacher: Person
+    event_uuid: str
     student: Person
+    teacher: Person
     cohort: str
     module: str
     exam_num: str
+    missed: str
     duration: int
     remarks: str
     tools: str
-    event_uuid: str
     status: str
 
     def to_json(self, response=True):
@@ -28,6 +29,7 @@ class Exam(dict):
                       '"cohort": "' + self.cohort + '", ' + \
                       '"module": "' + self.module + '", ' + \
                       '"exam_num": "' + self.exam_num + '", ' + \
+                      '"missed": "' + self.missed + '", ' + \
                       '"duration": ' + str(self.duration) + ', ' + \
                       '"remarks": "' + self.remarks + '", ' + \
                       '"tools": "' + self.tools + '", ' + \
@@ -90,6 +92,14 @@ class Exam(dict):
     @exam_num.setter
     def exam_num(self, value):
         self._exam_num = value
+
+    @property
+    def missed(self):
+        return self._missed
+
+    @missed.setter
+    def missed(self,value):
+        self._missed = value
 
     @property
     def duration(self):
