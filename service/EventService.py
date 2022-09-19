@@ -11,7 +11,6 @@ class EventService(Resource):
 
     author: Marcel Suter
     """
-    method_decorators = [token_required]
 
     def __init__(self):
         """
@@ -21,7 +20,7 @@ class EventService(Resource):
 
         """
         pass
-
+    @token_required
     def get(self, event_uuid=None):
         """
         gets an event identified by the uuid

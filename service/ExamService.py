@@ -15,7 +15,6 @@ class ExamService(Resource):
 
     author: Marcel Suter
     """
-    method_decorators = [token_required]
 
     def __init__(self):
         """
@@ -39,6 +38,7 @@ class ExamService(Resource):
 
         self.parser.add_argument('status', location='form', help='status')
 
+    @token_required
     def get(self, exam_uuid):
         """
         gets an exam identified by the uuid
@@ -57,6 +57,7 @@ class ExamService(Resource):
             data, http_status
         )
 
+    @token_required
     @teacher_required
     def post(self):
         """
@@ -67,6 +68,7 @@ class ExamService(Resource):
         self.save(args)
         return make_response('exam saved', 201)
 
+    @token_required
     @teacher_required
     def put(self):
         """

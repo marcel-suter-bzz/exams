@@ -11,7 +11,6 @@ class EventlistService(Resource):
 
     author: Marcel Suter
     """
-    method_decorators = [token_required]
 
     def __init__(self):
         """
@@ -22,6 +21,7 @@ class EventlistService(Resource):
         """
         pass
 
+    @token_required
     def get(self, date=None):
         """
         gets a list of events

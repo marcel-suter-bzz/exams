@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from datetime import datetime
+from dateutil import parser
 from model.Person import Person
 
 
@@ -17,8 +19,9 @@ class Exam(dict):
     cohort: str
     module: str
     exam_num: str
-    missed: str
+    missed: datetime.date
     duration: int
+    room: str
     remarks: str
     tools: str
     status: str
@@ -29,8 +32,9 @@ class Exam(dict):
                       '"cohort": "' + self.cohort + '", ' + \
                       '"module": "' + self.module + '", ' + \
                       '"exam_num": "' + self.exam_num + '", ' + \
-                      '"missed": "' + self.missed + '", ' + \
+                      '"missed": "' + self.missed.strftime("%Y-%m-%d") + '", ' + \
                       '"duration": ' + str(self.duration) + ', ' + \
+                      '"room": "' + self.room + '",' + \
                       '"remarks": "' + self.remarks + '", ' + \
                       '"tools": "' + self.tools + '", ' + \
                       '"event_uuid": "' + self.event_uuid + '", ' + \
@@ -98,8 +102,8 @@ class Exam(dict):
         return self._missed
 
     @missed.setter
-    def missed(self,value):
-        self._missed = value
+    def missed(self, value):
+        self._missed = parser.parse(value)
 
     @property
     def duration(self):
@@ -108,6 +112,14 @@ class Exam(dict):
     @duration.setter
     def duration(self, value):
         self._duration = value
+
+    @property
+    def room(self):
+        return self._room
+
+    @room.setter
+    def room(self, value):
+        self._room = value
 
     @property
     def remarks(self):

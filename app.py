@@ -9,6 +9,7 @@ from service.ExamService import ExamService
 from service.ExamlistService import ExamlistService
 from service.PersonService import PersonService
 from service.PeopleListService import PeoplelistService
+from service.PrintService import PrintService
 
 app = Flask(__name__)
 app.config.from_pyfile('./.env')
@@ -21,7 +22,8 @@ api.add_resource(PeoplelistService, '/people/<filter_value>')
 api.add_resource(AuthorizationService, '/login')
 api.add_resource(EventService, '/event/<event_uuid>')
 api.add_resource(EventlistService, '/events', '/events/<date>')
-api.add_resource(EmailService, '/email')
+api.add_resource(EmailService, '/email/<exam_uuid>/<type>')
+api.add_resource(PrintService, '/print/<exam_uuid>')
 
 @app.route('/')
 def home():

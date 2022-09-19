@@ -346,5 +346,17 @@
     "firstname": "muha@bzz.local",
     "lastname": "Hans",
     "role": "student"
+  },
+  {
+    "email": "marcel+arnheim@ghwalin",
+    "firstname": "Benno",
+    "lastname": "Arnheim",
+    "role": "teacher"
+  },
+  {
+    "email": "marcel+Fa.No@ghwalin.ch",
+    "firstname": "Fabio",
+    "lastname": "Noshow",
+    "role": "student"
   }
 ]

@@ -124,6 +124,7 @@ class ExamDAO:
                 exam_num=item['exam_num'],
                 missed=item['missed'],
                 duration=item['duration'],
+                room=item['room'],
                 remarks=item['remarks'],
                 tools=item['tools'],
                 status=item['status']

@@ -170,10 +170,30 @@ function showExamlist(data) {
                 let button = document.createElement("button");
                 button.innerHTML = "&#9998;";
                 button.type = "button";
-                button.name = "editSheet";
+                button.id = "editExam";
+                button.title = "Bearbeiten";
                 button.setAttribute("data-examUUID", exam.exam_uuid);
                 button.addEventListener("click", selectExam);
                 cell.appendChild(button);
+
+                if (role == "teacher") {
+                    button = document.createElement("button");
+                    button.innerHTML = "&#9993;";
+                    button.type = "button";
+                    button.id = "sendEmail";
+                    button.title = "Email";
+                    button.setAttribute("data-examUUID", exam.exam_uuid);
+                    button.addEventListener("click", sendEmail);
+                    cell.appendChild(button);
+                    button = document.createElement("button");
+                    button.innerHTML = "&#128438;";
+                    button.type = "button";
+                    button.id = "createPDF";
+                    button.title = "Drucken";
+                    button.setAttribute("data-examUUID", exam.exam_uuid);
+                    button.addEventListener("click", createPDF);
+                    cell.appendChild(button);
+                }
 
                 cell = row.insertCell(-1);
                 cell.innerHTML = exam.student.firstname + " " + exam.student.lastname;
@@ -230,7 +250,7 @@ function saveExam(event) {
     const examForm = document.getElementById("editform");
     if (examForm.checkValidity()) {
         const url = API_URL + "/exam";
-        const fields = ["exam_uuid", "teacher", "module", "exam_num", "cohort", "duration", "event_uuid", "student", "status", "tools", "remarks"];
+        const fields = ["exam_uuid", "teacher", "module", "exam_num", "cohort", "duration", "room", "event_uuid", "student", "status", "tools", "remarks"];
         let data = new URLSearchParams();
         for (let field of fields) {
             data.set(field, document.getElementById(field).value);
@@ -262,6 +282,9 @@ function saveExam(event) {
 
 }
 
+/**
+ * resets and closes the edit form
+ */
 function resetForm() {
     const form = document.getElementById("editform");
     let elements = form.getElementsByTagName("input");
@@ -271,4 +294,42 @@ function resetForm() {
         element.value = "";
     }
     form.classList.add("d-none");
+}
+
+/**
+ * event that fires when sendEmail is selected
+ * @param event
+ */
+function sendEmail(event) {
+    const button = event.target;
+    const uuid = button.getAttribute("data-examUUID");
+    fetch(API_URL + "/email/" + uuid, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + readStorage("token")
+        }
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                console.log(response); // TODO error handling
+            } else return response;
+        })
+        .then(() => {
+            console.log("SUCCESS");
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+/**
+ * creates a pdf for an event
+ * @param event
+ */
+function createPDF(event) {
+    const button = event.target;
+    const uuid = button.getAttribute("data-examUUID");
+    let url = "./print/" + uuid;
+    window.open(url, "_blank");
 }
