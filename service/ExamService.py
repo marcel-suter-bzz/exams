@@ -4,7 +4,6 @@ from flask import make_response
 from flask_restful import Resource, fields, reqparse
 
 from data.PersonDAO import PersonDAO
-from model.Person import Person
 from util.authorization import token_required, teacher_required
 from data.ExamDAO import ExamDAO
 from model.Exam import Exam
@@ -24,19 +23,19 @@ class ExamService(Resource):
 
         """
         self.parser = reqparse.RequestParser()
-        self.parser.add_argument('exam_uuid', location='form', help='uuid')
-        self.parser.add_argument('event_uuid', location='form', help='event_uuid')
-        self.parser.add_argument('student', location='form', help='student')
-        self.parser.add_argument('teacher', location='form', help='teacher')
-        self.parser.add_argument('cohort', location='form', help='cohort')
-        self.parser.add_argument('module', location='form', help='module')
-        self.parser.add_argument('exam_num', location='form', help='exam-num')
-        self.parser.add_argument('duration', location='form', type=str, help='Muss eine Ganzzahl sein')
-        self.parser.add_argument('missed', location='form', help='Muss ein gültiges Datum sein')
-        self.parser.add_argument('remarks', location='form', help='remarks')
-        self.parser.add_argument('tools', location='form', help='tools')
-
-        self.parser.add_argument('status', location='form', help='status')
+        self.parser.add_argument('exam_uuid', location='form', default=None, help='uuid')
+        self.parser.add_argument('event_uuid', location='form', default=None, help='event_uuid')
+        self.parser.add_argument('student', location='form', default=None, help='student')
+        self.parser.add_argument('teacher', location='form', default=None, help='teacher')
+        self.parser.add_argument('cohort', location='form', default=None, help='cohort')
+        self.parser.add_argument('module', location='form', default=None, help='module')
+        self.parser.add_argument('exam_num', location='form', default=None, help='exam-num')
+        self.parser.add_argument('duration', location='form', type=str, default=None, help='Muss eine Ganzzahl sein')
+        self.parser.add_argument('room', location='form', type=str, default=None, help='Raum')
+        self.parser.add_argument('missed', location='form', default=None, help='Muss ein gültiges Datum sein')
+        self.parser.add_argument('remarks', location='form', default=None, help='remarks')
+        self.parser.add_argument('tools', location='form', default=None, help='tools')
+        self.parser.add_argument('status', location='form', default=None, help='status')
 
     @token_required
     def get(self, exam_uuid):
@@ -88,10 +87,14 @@ class ExamService(Resource):
         if args.exam_uuid is None or args.exam_uuid == '':
             args.exam_uuid = str(uuid.uuid4())
         person_dao = PersonDAO()
-        teacher = person_dao.read_person(args.teacher)
-        student = person_dao.read_person(args.student)
+        teacher = args.teacher
+        if args.teacher is not None:
+            teacher = person_dao.read_person(args.teacher)
+        student = args.student
+        if args.student is not None:
+            student = person_dao.read_person(args.student)
         exam = Exam(
-            exams_uuid=args.exam_uuid,
+            exam_uuid=args.exam_uuid,
             teacher=teacher,
             student=student,
             cohort=args.cohort,
@@ -99,6 +102,7 @@ class ExamService(Resource):
             exam_num=args.exam_num,
             duration=args.duration,
             missed=args.missed,
+            room=args.room,
             remarks=args.remarks,
             tools=args.tools,
             event_uuid=args.event_uuid,

@@ -1,8 +1,6 @@
 /**
  * view-controller for examlist
  */
-const user = readStorage("email");
-const role = readStorage("role");
 let delayTimer;
 
 searchExamlist(user);
@@ -294,42 +292,4 @@ function resetForm() {
         element.value = "";
     }
     form.classList.add("d-none");
-}
-
-/**
- * event that fires when sendEmail is selected
- * @param event
- */
-function sendEmail(event) {
-    const button = event.target;
-    const uuid = button.getAttribute("data-examUUID");
-    fetch(API_URL + "/email/" + uuid, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": "Bearer " + readStorage("token")
-        }
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                console.log(response); // TODO error handling
-            } else return response;
-        })
-        .then(() => {
-            console.log("SUCCESS");
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
-
-/**
- * creates a pdf for an event
- * @param event
- */
-function createPDF(event) {
-    const button = event.target;
-    const uuid = button.getAttribute("data-examUUID");
-    let url = "./print/" + uuid;
-    window.open(url, "_blank");
 }

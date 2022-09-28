@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from datetime import datetime
+import datetime
 from dateutil import parser
 from model.Person import Person
 
@@ -27,27 +27,29 @@ class Exam(dict):
     status: str
 
     def to_json(self, response=True):
-        try:
-            jstring = '{"exam_uuid":"' + self.exam_uuid + '",' + \
-                      '"cohort": "' + self.cohort + '", ' + \
-                      '"module": "' + self.module + '", ' + \
-                      '"exam_num": "' + self.exam_num + '", ' + \
-                      '"missed": "' + self.missed.strftime("%Y-%m-%d") + '", ' + \
-                      '"duration": ' + str(self.duration) + ', ' + \
-                      '"room": "' + self.room + '",' + \
-                      '"remarks": "' + self.remarks + '", ' + \
-                      '"tools": "' + self.tools + '", ' + \
-                      '"event_uuid": "' + self.event_uuid + '", ' + \
-                      '"status": "' + self.status + '", '
-            if response:
-                jstring += '"teacher": ' + self.teacher.to_json() + ',' + \
-                           '"student": ' + self.student.to_json() + '}'
-            else:
-                jstring += '"teacher":"' + self.teacher.email + '",' + \
-                           '"student":"' + self.student.email + '"}'
-            return jstring
-        except:
-            print('Error')
+        # try:
+        jstring = '{"exam_uuid":"' + self.exam_uuid + '",'
+        jstring += '"cohort": "' + self.cohort + '", '
+        jstring += '"module": "' + self.module + '", '
+        jstring += '"exam_num": "' + self.exam_num + '", '
+        jstring += '"missed": "' + self.missed.strftime("%Y-%m-%d") + '", '
+        jstring += '"duration": ' + str(self.duration) + ', '
+        jstring += '"room": "' + self.room + '",'
+        jstring += '"remarks": "' + self.remarks + '", '
+        jstring += '"tools": "' + self.tools + '", '
+        jstring += '"event_uuid": "' + self.event_uuid + '", '
+        jstring += '"status": "' + self.status + '", '
+        if response:
+            jstring += '"teacher": ' + self.teacher.to_json() + ',' + \
+                       '"student": ' + self.student.to_json() + '}'
+        else:
+            jstring += '"teacher":"' + self.teacher.email + '",' + \
+                       '"student":"' + self.student.email + '"}'
+        return jstring
+
+    # except Exception as e:
+    #    logging.exception("An exception was thrown!")
+    #    print('Error')
 
     @property
     def exam_uuid(self):
@@ -103,7 +105,10 @@ class Exam(dict):
 
     @missed.setter
     def missed(self, value):
-        self._missed = parser.parse(value)
+        if value is None or isinstance(value, datetime.date):
+            self._missed = value
+        else:
+            self._missed = parser.parse(value)
 
     @property
     def duration(self):

@@ -12,3 +12,11 @@ footer {
   height: 60px; /* Set the fixed height of the footer here */
   line-height: 30px; /* Vertically center the text there */
 }
+
+.bg-cyan {
+  background-color: var(--bs-cyan);
+}
+
+.nav-item, .navbar-brand {
+  color: var(--bs-cyan) !important;
+}

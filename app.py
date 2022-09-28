@@ -1,4 +1,5 @@
 from flask import Flask, render_template, send_from_directory
+from flask_cors import CORS
 from flask_restful import  Api
 
 from service.EmailService import EmailService
@@ -12,6 +13,7 @@ from service.PeopleListService import PeoplelistService
 from service.PrintService import PrintService
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_pyfile('./.env')
 api = Api(app)
 
@@ -23,7 +25,7 @@ api.add_resource(AuthorizationService, '/login')
 api.add_resource(EventService, '/event/<event_uuid>')
 api.add_resource(EventlistService, '/events', '/events/<date>')
 api.add_resource(EmailService, '/email/<exam_uuid>/<type>')
-api.add_resource(PrintService, '/print/<exam_uuid>')
+api.add_resource(PrintService, '/print', '/print/<exam_uuid>')
 
 @app.route('/')
 def home():

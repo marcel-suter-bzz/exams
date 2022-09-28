@@ -1,5 +1,7 @@
 import json
 
+from flask import current_app
+
 from data.PersonDAO import PersonDAO
 from model.Exam import Exam
 
@@ -90,14 +92,30 @@ class ExamDAO:
         :param exam:
         :return:
         """
-        self._examdict[exam.exam_uuid] = exam
+        if exam.exam_uuid not in self._examdict:
+            self._examdict[exam.exam_uuid] = exam
+        old = self._examdict[exam.exam_uuid]
+
+        if exam.event_uuid is not None: old.event_uuid = exam.event_uuid
+        if exam.student is not None: old.student = exam.student
+        if exam.teacher is not None: old.teacher = exam.teacher
+        if exam.cohort is not None: old.cohort = exam.cohort
+        if exam.module is not None: old.module = exam.module
+        if exam.exam_num is not None: old.exam_num = exam.exam_num
+        if exam.missed is not None: old.missed = exam.missed
+        if exam.duration is not None: old.duration = exam.duration
+        if exam.room is not None: old.room = exam.room
+        if exam.remarks is not None: old.remarks = exam.remarks
+        if exam.tools is not None: old.tools = exam.tools
+        if exam.status is not None: old.status = exam.status
+
         exams_json = '['
         for key in self._examdict:
             data = self._examdict[key].to_json(False)
             exams_json += data + ','
         exams_json = exams_json[:-1] + ']'
 
-        file = open('./files/exams.json', 'w')
+        file = open(current_app.config['DATAPATH'] + 'exams.json', 'w')
         file.write(exams_json)
         file.close()
 
@@ -108,7 +126,7 @@ class ExamDAO:
         :rtype: none
         """
         person_dao = PersonDAO()
-        file = open('./files/exams.json')
+        file = open(current_app.config['DATAPATH'] + 'exams.json')
         exams = json.load(file)
         for item in exams:
             key = item['exam_uuid']

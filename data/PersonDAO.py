@@ -1,3 +1,5 @@
+from flask import current_app
+
 from model.Person import Person
 import json
 
@@ -83,7 +85,7 @@ class PersonDAO:
         """
         self._peopledict[person.email] = person
         jstring = Person.schema().dumps(list(self._peopledict.values()), many=True)
-        file = open('./files/person.json', 'w')
+        file = open(current_app.config['DATAPATH'] + 'person.json', 'w')
         file.write(jstring)
         file.close()
 
@@ -93,7 +95,7 @@ class PersonDAO:
                 :return: none
                 :rtype: none
                 """
-        file = open('./files/person.json')
+        file = open(current_app.config['DATAPATH'] + 'person.json')
         people = json.load(file)
         for item in people:
             key = item['email']

@@ -24,37 +24,7 @@ function searchPeople(event) {
     }, 500);
 }
 
-/**
- * loads all people mathicng a filter
- * @param filter
- */
-function loadPeople(filter, fieldname) {
-    fetch(API_URL + "/people/" + filter,
-        {
-            headers: {
-                "Authorization": "Bearer " + readStorage("token")
-            },
-        })
-        .then(function (response) {
-            if (response.ok) {
-                return response;
-            } else if (response.status === 401) {
-                window.location.href = "./";
-            } else if (response.status === 404) {
-                showMessage("warning", "Keine Daten gefunden");
-            } else {
-                showMessage("error", "Fehler");
-                console.log(response); // TODO error handling
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            setPeopleList(data, fieldname);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+
 
 /**
  * updates the data list for searching people

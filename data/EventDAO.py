@@ -1,6 +1,8 @@
 import json
 import uuid
 from dateutil import parser
+from flask import current_app
+
 from model.Event import Event
 
 
@@ -62,7 +64,7 @@ class EventDAO:
         self._eventdict[event.event_uuid] = event
         jstring = Event.schema().dumps(list(self._examvent.values()), many=True)
 
-        file = open('./files/events.json', 'w')
+        file = open(current_app.config['DATAPATH'] + 'events.json', 'w')
         file.write(jstring)
         file.close()
 
@@ -74,7 +76,7 @@ class EventDAO:
         :rtype: none
         """
 
-        file = open('./files/events.json')
+        file = open(current_app.config['DATAPATH'] + 'events.json')
         events = json.load(file)
         for item in events:
             key = item['event_uuid']

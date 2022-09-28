@@ -4,12 +4,45 @@
  */
 
 const API_URL = "http://127.0.0.1:5000";
+const user = readStorage("email");
+const role = readStorage("role");
+let delayTimer;
+let messageTimer;
+
+function getRequest(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url, {
+            headers: {
+                "Authorization": "Bearer " + readStorage("token")
+            },
+        }).then(function (response) {
+            if (response.ok) {
+                return response;
+            } else if (response.status === 401) {
+                window.location.href = "./";
+                reject("401");
+            } else if (response.status === 404) {
+                resolve(null);
+            } else {
+                console.log(response);
+                reject(response.status);
+            }
+        }).then(response => response.json()
+        ).then(data => {
+            resolve(data);
+        }).catch(function (error) {
+            console.log(error);
+            reject(error.status);
+        });
+    });
+}
+
 /*
  * shows a info/warn/error-message
  * @param type  message type
  * @param message
  */
-function showMessage(type, message) {
+function showMessage(type, message="") {
     (async () => {
         let exists = false;
         while (!exists) {
@@ -18,8 +51,16 @@ function showMessage(type, message) {
                 await new Promise(resolve => setTimeout(resolve, 100));
         }
         const field = document.getElementById("messages");
-        field.className = type;
+        field.className = "alert alert-" + type;
         field.innerHTML = message;
+
+        if (type == "success") {
+            messageTimer = setTimeout(() => {
+                showMessage("clear", "&nbsp;");
+            }, 1000);
+        } else if (type == "clear") {
+            clearTimeout(messageTimer);
+        }
     })();
 }
 
@@ -53,9 +94,9 @@ function makeField(name, type, value, size = 0) {
 function lockForm(formId, locked = true) {
     const form = document.getElementById(formId);
     const fields = form.querySelectorAll("select,input");
-    for (let i=0; i<fields.length; i++) {
+    for (let i = 0; i < fields.length; i++) {
         const field = fields[i];
-        if (field.id == "student" || field.id == "teacher" || field.id == "exam_uuid");
+        if (field.id == "student" || field.id == "teacher" || field.id == "exam_uuid") ;
         else if (field.tagName === "INPUT") {
             field.readOnly = locked;
         } else if (field.tagName === "SELECT") {
@@ -103,4 +144,17 @@ function writeStorage(data) {
  */
 function readStorage(item) {
     return sessionStorage.getItem(item);
+}
+
+/**
+ * gets the examuuid from a button
+ * @param event
+ * @returns {string}
+ */
+function getExamUUID(event) {
+    let targetElement = event.target;
+    if (targetElement.tagName == "IMG") {
+        targetElement = targetElement.parentNode;
+    }
+    return targetElement.getAttribute("data-examuuid");
 }

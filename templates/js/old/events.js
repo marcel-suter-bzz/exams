@@ -1,7 +1,7 @@
 /**
  * view-controller for examlist
  */
-let eventList = {};
+
 
 readEventList();
 document.addEventListener("DOMContentLoaded", () => {
