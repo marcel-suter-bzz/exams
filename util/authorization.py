@@ -21,7 +21,7 @@ def token_required(func):
         if not token:
             return make_response(jsonify({"message": "A valid token is missing!"}), 401)
         try:
-            data = jwt.decode(token[7:], current_app.config['SECRET_KEY'], algorithms=["HS256"])
+            data = jwt.decode(token[7:], current_app.config['ACCESS_TOKEN_KEY'], algorithms=["HS256"])
             email = data['email']
             person_dao = PersonDAO()
             g.user = person_dao.read_person(email)

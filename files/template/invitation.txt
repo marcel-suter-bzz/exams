@@ -1,4 +1,4 @@
-Sehr geehrte(r) Frau/Herr {{student.lastname}}
+Guten Tag {{student.firstname}} {{student.lastname}}
 
 Sie haben am {{missed}} im Modul {{module}} während der Leistungsbeurteilung gefehlt und werden hiermit zu einer Nachprüfung aufgeboten.
 
@@ -16,5 +16,6 @@ Hinweise:
 
 Freundliche Grüsse
 
+Bildungszentrum Zürichsee
 {{teacher.firstname}} {{teacher.lastname}}
 https://exam.it.bzz.ch

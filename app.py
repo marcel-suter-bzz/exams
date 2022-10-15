@@ -21,19 +21,19 @@ api.add_resource(ExamService, '/exam', '/exam/<exam_uuid>')
 api.add_resource(ExamlistService, '/exams')
 api.add_resource(PersonService, '/person')
 api.add_resource(PeoplelistService, '/people/<filter_value>')
-api.add_resource(AuthorizationService, '/login')
+api.add_resource(AuthorizationService, '/login', '/login/<email>')
 api.add_resource(EventService, '/event/<event_uuid>')
 api.add_resource(EventlistService, '/events', '/events/<date>')
-api.add_resource(EmailService, '/email/<exam_uuid>/<type>')
+api.add_resource(EmailService, '/email', '/email/<exam_uuid>/<type>')
 api.add_resource(PrintService, '/print', '/print/<exam_uuid>')
 
 @app.route('/')
 def home():
    return render_template('index.html')
 
-@app.route('/<path:path>')
-def page(path):
-    return send_from_directory('templates', path)
+@app.route('/output/<filename>')
+def page(filename):
+    return send_from_directory('output', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
