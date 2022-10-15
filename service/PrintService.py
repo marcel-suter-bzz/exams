@@ -27,11 +27,11 @@ class PrintService(Resource):
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('exam_uuid', location='form', type=list, default=None, help='uuid', action='append')
 
-    #@token_required  FIXME
-    #@teacher_required
+    @token_required
+    @teacher_required
     def get(self, exam_uuid):
         """
-        sends a pdf
+        sends a pdf for one exam
         :param exam_uuid: the unique key
         :return: http response
         """
@@ -46,16 +46,20 @@ class PrintService(Resource):
             pdf.set_font('helvetica', '', 12)
             pdf.set_fill_color(r=192, g=192, b=192)
             pdf.set_line_width(0.5)
-            data = self.foobar(exam)
+            data = self.build_dict(exam)
             self.make_page(exam, data, texts, pdf)
             response = make_response(pdf.output())
             response.headers["Content-Type"] = "application/pdf"
             return response
         return make_response('not found', 404)
 
-    # @token_required  FIXME
-    # @teacher_required
+    @token_required
+    @teacher_required
     def put(self):
+        """
+        sends a pdf for a list of exams
+        :return: response with path to pdf
+        """
         args = self.parser.parse_args()
         exam_dao = ExamDAO()
         pdf = FPDF()
@@ -68,10 +72,10 @@ class PrintService(Resource):
         for exam_uuid in args['exam_uuid']:
             exam = exam_dao.read_exam(exam_uuid[0])
             if exam is not None:
-                data = self.foobar(exam)
+                data = self.build_dict(exam)
                 self.make_page(exam, data, texts, pdf)
         pdf_file = uuid.uuid4().hex + '.pdf'
-        pdf.output(current_app.config['OUTPUT'] + pdf_file)
+        pdf.output(current_app.config['OUTPUTPATH'] + pdf_file)
         response = make_response(pdf_file)
         return response
 
@@ -110,11 +114,10 @@ class PrintService(Resource):
                     pdf.rect(xcoord, ycoord, width, height, style='F', round_corners=True, corner_radius=4)
 
 
-    def foobar(self, exam):
+    def build_dict(self, exam):
         """
-        creates an email for the selected exam and type
-        :param exam: the unique uuid for an exam
-        :param type: the type of email (missed, ...)
+        creates a dict with placeholders and values
+        :param exam: the exam with the data
         :return: pdf file
         """
         event_dao = EventDAO()
