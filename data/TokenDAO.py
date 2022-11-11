@@ -48,7 +48,7 @@ class TokenDAO:
             token_json += data + ','
         token_json = token_json[:-1] + ']'
 
-        file = open(current_app.config['DATAPATH'] + 'tokens.json', 'w')
+        file = open(current_app.config['DATAPATH'] + 'tokens.json', 'w', encoding='utf-8')
         file.write(token_json)
         file.close()
 
@@ -58,7 +58,7 @@ class TokenDAO:
         :return:
         """
         now = str(datetime.utcnow())
-        file = open(current_app.config['DATAPATH'] + 'tokens.json')
+        file = open(current_app.config['DATAPATH'] + 'tokens.json', encoding='utf-8')
         tokens = json.load(file)
         for item in tokens:
             if now < item['expiration']:

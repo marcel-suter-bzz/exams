@@ -15,6 +15,7 @@ def token_required(func):
     @wraps(func)
     def decorator(*args, **kwargs):
         token = None
+        current_app.logger.info('%s', request.headers)
         if 'Authorization' in request.headers:
             token = request.headers['Authorization']
 

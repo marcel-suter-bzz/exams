@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import datetime
 from dateutil import parser
-from flask import logging
+from flask import logging, current_app
 
 from model.Person import Person
 
@@ -50,8 +50,7 @@ class Exam(dict):
             return jstring
 
         except Exception as e:
-            logging.exception("An exception was thrown!")
-            print('Error')
+            current_app.logger.error('Exams / Exam.to_json: Error')
 
     @property
     def exam_uuid(self):

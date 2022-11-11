@@ -346,5 +346,11 @@
     "firstname": "muha@bzz.local",
     "lastname": "Hans",
     "role": "student"
+  },
+  {
+    "email": "hanna.heimspiel@bzz.local",
+    "firstname": "Hanna",
+    "lastname": "Heimspiel",
+    "role": "teacher"
   }
 ]

@@ -1033,35 +1033,5 @@
     "status": "pendent",
     "teacher": "c.benson@bzz.local",
     "student": "No.Sc@bzz.local"
-  },
-  {
-    "exam_uuid": "66416f73-4c84-45f1-b272-b36f0408a42d",
-    "cohort": "QW11",
-    "module": "abc",
-    "exam_num": "12",
-    "missed": "2022-10-08",
-    "duration": 1,
-    "room": "undefined",
-    "remarks": "",
-    "tools": "",
-    "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
-    "status": "pendent",
-    "teacher": "e.daring@bzz.local",
-    "student": "marcel+Fa.No@ghwalin.ch"
-  },
-  {
-    "exam_uuid": "49be2e8e-af70-401f-9b2e-6ba710dea5b6",
-    "cohort": "QW11",
-    "module": "abc",
-    "exam_num": "12",
-    "missed": "2022-10-08",
-    "duration": 1,
-    "room": "undefined",
-    "remarks": "",
-    "tools": "",
-    "event_uuid": "0bc11938-d5cc-4e9e-802b-223a6775d7e0",
-    "status": "pendent",
-    "teacher": "e.daring@bzz.local",
-    "student": "marcel+Fa.No@ghwalin.ch"
   }
 ]
